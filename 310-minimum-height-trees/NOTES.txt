@@ -1,0 +1,32 @@
+degree[a]++;
+degree[b]++;
+}
+queue<int>queue_degree_1;
+//push all the nodes with degree 1
+for(int i=0;i<n;i++) if(degree[i]==1) queue_degree_1.push(i);
+//MHT root nodes
+vector<int>res;
+//Run BFS until queue is empty
+while(!queue_degree_1.empty()){
+int n = queue_degree_1.size();
+res.clear();//clear the root nodes
+//This is our level order traverse
+while(n--){
+int node = queue_degree_1.front();
+queue_degree_1.pop();
+//add current node into the root node vector
+res.push_back(node);
+//Now it's time for neighbouring nodes
+for(int i=0;i<graph[node].size();i++){
+//decrease degree of neighbour nodes and push leaff nodes intp queue
+degree[graph[node][i]]--;
+if(degree[graph[node][i]]==1) queue_degree_1.push(graph[node][i]);
+}
+}
+}
+return res;//root nodes of MHT
+}
+};
+```
+​
+**Feel free to comment if you have some suggestion or if you liked my post :)**
