@@ -1,0 +1,21 @@
+return ceil(log2(n)) == floor(log2(n));
+}
+};
+```
+​
+**5. LMAO method**
+We are literally gonna take the advantage of the constraints. I  dont recommend you all to use this method during your interviews. It's a fun method . Do this on your own, you will enjoy it ;))
+* *Hint:Constraints [-2^31 <= n <= 2^31 - 1] also 2^30 is 1073741824 *
+```
+class Solution {
+public:
+bool isPowerOfTwo(int n) {
+if(n==0) return false;
+return (n>0)&&(1073741824%n==0);
+}
+};
+```
+​
+.....*Continuation from previous posts...
+As JThree slowly lifted his finger towards sky . Rest got confused by his gesture and Doggo bonked him at head .Doggo told to JThree , "Say clearly you idiot dont try to become cool lol ". JThree replied, "Sorry, sorry I will make it more clear.This chamber is made up off 5 walls alligned in different direction you all forgetting about one more direction i.e the ceiling. As we know the ceiling changed it's color to colorless white don't you all think that this can be the representative of the 4th cardinal season ". rest replied, "ok,we got the point, Now let's check on it". Helikopter Helikopter came and picked them all .All of them got amazed by the majesty of ceiling ...
+To be continued in the next post*..........
