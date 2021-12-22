@@ -1,0 +1,25 @@
+ListNode* penultimate = head;
+while (penultimate->next->next) penultimate = penultimate->next;
+// Link the penultimate with the second element
+penultimate->next->next = head->next;
+head->next = penultimate->next;
+//Again set the penultimate to the the last
+penultimate->next = NULL;
+// Do the above steps rcursive
+reorderList(head->next->next);
+}
+};
+```
+​
+**Two pointer Approach [Tortoise and Hare method]:-**
+*This approach is much faster and efficient in terms of Time and Space Complexity the only drawback is that it looks a little bit lengthy but trust me it's easy to understand *.
+​
+**Two pointer Approach Algorithm:**
+1. First let's take two pointers name it as `half` and `temp` . `temp ` is faster than `half` by 1.
+2. When `temp` reaches the end of linkedlsit `half` reaches the middle element .So this is how the linkedlist will get divided in two halfes as the center will become a dividing node .
+3. Now reverse the second half .
+4. After reversing the second half, merge the first half and second half
+​
+**Two pointer Approach Code:-**
+​
+​
