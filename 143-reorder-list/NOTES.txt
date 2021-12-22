@@ -1,25 +1,32 @@
+`firstnode->lastnode->secondnode->penultimate node->third node->3rd last node ............` .
+So there are two ways i can think of now to sove this problem.
+**1. Brute Force :-**
+* In this we will first traverse to penultimate node and then start relinking each node .
+​
+**2. ** **Two pointer approach[sometimes referred as Tortoise and hare method]:-**
+* We will have two pointers 1st pointer moving at speed of 1node and 2nd pointer moving at speed of twice the node.So basically one is moving at double speed and thus when it will be finished, the other has to be midway) and possibly adjusting it with lists of even length.This created two halfs of linkedlist
+* Then we reverse the second list and Finally we merge these two lists.
+​
+**Brute-Force Algorithm:-**
+1. First some base cases that we need to take care i.e if the linked list has zero,one or two elements just return it
+2. Now next we need to find the penultimate node, so after finding it we can start the relinking process
+3. Now start the relinking process as 1st node with last node ,2nd node with penultimate node, 3rd node with 3rd last node ......
+4. Now repeat 2nd and 3rd steps.
+​
+**Let's have a dy run before starting the code:-**
+​
+​
+**Brute-Force code-:**
+```
+//Upvote  and Comment
+class Solution {
+public:
+void reorderList(ListNode* head) {
+//base case i.e if the linked list has zero,one or two elments just return it
+if(!head || !head->next || !head->next->next) return;
+//Find the penultimate node i.e second last node of the linkedlist
 ListNode* penultimate = head;
 while (penultimate->next->next) penultimate = penultimate->next;
 // Link the penultimate with the second element
 penultimate->next->next = head->next;
 head->next = penultimate->next;
-//Again set the penultimate to the the last
-penultimate->next = NULL;
-// Do the above steps rcursive
-reorderList(head->next->next);
-}
-};
-```
-​
-**Two pointer Approach [Tortoise and Hare method]:-**
-*This approach is much faster and efficient in terms of Time and Space Complexity the only drawback is that it looks a little bit lengthy but trust me it's easy to understand *.
-​
-**Two pointer Approach Algorithm:**
-1. First let's take two pointers name it as `half` and `temp` . `temp ` is faster than `half` by 1.
-2. When `temp` reaches the end of linkedlsit `half` reaches the middle element .So this is how the linkedlist will get divided in two halfes as the center will become a dividing node .
-3. Now reverse the second half .
-4. After reversing the second half, merge the first half and second half
-​
-**Two pointer Approach Code:-**
-​
-​
