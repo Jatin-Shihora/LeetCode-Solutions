@@ -1,0 +1,28 @@
+//insert the the the first interval in the result
+result.push_back(interval[0]);
+int j=0;
+//Treverse the whole vector .Takes O(n) time
+for(int i=1;i<interval.size();i++)
+{
+//if intevals are overlapping
+if(result[j][1]>=interval[i][0])
+result[j][1]=max(result[j][1],interval[i][1]);
+//else they are not overlapping
+else
+{
+j++;
+result.push_back(interval[i]);
+}
+}
+return result;
+}
+};
+```
+​
+Code type 2:-
+​
+​
+**Time complexity :** *`O(nlogn) [for using the sort function] + O(n) [for traversing the interval] = O(nlogn)`*
+**Space Complexity :** *`O(n) [For our resultant vector]`*
+​
+**Feel free to comment if you have some suggestions or upvote if you liked it.**
