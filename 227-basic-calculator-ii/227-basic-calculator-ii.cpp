@@ -3,10 +3,9 @@ public:
  int calculate(string s) {
     int sum = 0; 
     if(s.size() < 1) return sum; 
-    int i = 0; 
     long long last = 0, last_result = 1;  
     char last_operator = '+'; //remember the last operator
-    int sign = 1; 
+    int i = 0, sign = 1; 
     while(i < s.size()){
         if(s[i] == ' '){++i; continue;}
         if(s[i] == '+' || s[i] == '-'){
