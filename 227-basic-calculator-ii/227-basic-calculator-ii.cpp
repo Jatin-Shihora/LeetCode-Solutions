@@ -1,7 +1,7 @@
 class Solution {
 public:
  int calculate(string s) {
-    long long sum = 0; 
+    int sum = 0; 
     if(s.size() < 1) return sum; 
     long long i = 0; 
     long long last = 0, last_result = 1;  
