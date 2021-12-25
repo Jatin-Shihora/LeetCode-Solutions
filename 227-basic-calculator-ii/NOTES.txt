@@ -1,0 +1,46 @@
+* Condition3: Now while traversing if we found digits, we will pick it up and if the last_operator was `*`  do `last_result *= last` else if the operator will be `/` then do
+`last_result /= last;`
+* Condition4: `last_result = last ` :))
+​
+**Let's take a dry run before we start the code:-**
+​
+last_operator is set to be '+'
+when we read '1', we check the operator before 1, it's '+', so first tempresult is 1, and "ans = 1";
+when we read '+', last_operator is again reseted to be '+'
+when we read 2, because the operator before 2 is '+', so 2 is the beginning number of the new operand, so we set tempresult = (+) 2;
+when we read *, last_operator is set to be *
+when we read 3, tempresult = (+) 2*3
+when we read '-', last_operator is set to be '-'
+when we read 5, we check the operator before 5 is '-' which indicates the end of current tempresult, so we update final answer, ans = 1 + 2*3, and interim is reset to be (-) 5;
+when we read '/', last_operator is set to be '/'
+when we read '4', because the operator before 4 is '/', update lastresult = (-5) / 4.
+When we finished reading everything, add the last interim to final answer: ans = 1 + 2*3 + (-5)/4
+​
+**Code:-**
+```
+class Solution {
+public:
+int calculate(string s) {
+//Initializing of intermediate state variables
+int sum = 0, last_result = 1;   long long last = 0;
+//base case
+if(s.size() < 1) return sum;
+//The sign flag is for the case if in input user gives a negative value. This question has no such conditions but yet i have done, because this may be a genereal case for implementaion in real life .
+int i = 0 , sign = 1;
+char last_operator = '+'; //we need to remember the last operator
+​
+//Traverse the given string s
+while(i <= s.size()){
+//Condition 1
+if(s[i] == ' '){++i; continue;}
+​
+//Condition 2
+if(s[i] == '+' || s[i] == '-' || !s[i]){ //Check the end of the string
+sum += last_result * sign;
+sign = s[i++] == '+' ? 1 : -1;
+last_result = 1;
+last_operator = '+';
+}
+else if(s[i] == '/' || s[i] == '*'){
+last_operator = s[i];
+++i;
