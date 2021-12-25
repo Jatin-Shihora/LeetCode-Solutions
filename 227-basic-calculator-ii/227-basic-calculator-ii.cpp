@@ -1,13 +1,19 @@
 class Solution {
 public:
  int calculate(string s) {
-    int sum = 0; 
-    if(s.size() < 1) return sum; 
+    int sum = 0;
     long long last = 0, last_result = 1;  
-    char last_operator = '+'; //remember the last operator
+    char last_operator = '+'; //we need to remember the last operator
+    //base case
+    if(s.size() < 1) return sum; 
+    //The sign flag is for the case if in input user gives a negative value. This question has no such conditions but yet i have done, because this may be a genereal case for implementaion in real life .
     int i = 0, sign = 1; 
+    //Traverse the given string s
     while(i < s.size()){
+        //Condition 1
         if(s[i] == ' '){++i; continue;}
+        
+        //Condition 2
         if(s[i] == '+' || s[i] == '-'){
             sum += last_result * sign;
             sign = s[i++] == '+' ? 1 : -1; 
