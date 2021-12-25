@@ -1,15 +1,3 @@
-* Condition3: Now while traversing if we found digits, we will pick it up and if the last_operator was `*`  do `last_result *= last` else if the operator will be `/` then do
-`last_result /= last;`
-* Condition4: `last_result = last ` :))
-​
-**Let's take a dry run before we start the code:-**
-​
-last_operator is set to be '+'
-when we read '1', we check the operator before 1, it's '+', so first tempresult is 1, and "ans = 1";
-when we read '+', last_operator is again reseted to be '+'
-when we read 2, because the operator before 2 is '+', so 2 is the beginning number of the new operand, so we set tempresult = (+) 2;
-when we read *, last_operator is set to be *
-when we read 3, tempresult = (+) 2*3
 when we read '-', last_operator is set to be '-'
 when we read 5, we check the operator before 5 is '-' which indicates the end of current tempresult, so we update final answer, ans = 1 + 2*3, and interim is reset to be (-) 5;
 when we read '/', last_operator is set to be '/'
@@ -44,3 +32,21 @@ last_operator = '+';
 else if(s[i] == '/' || s[i] == '*'){
 last_operator = s[i];
 ++i;
+}
+​
+//Condition 3
+if(isdigit(s[i])){
+last = 0;
+while(i < s.size() && isdigit(s[i])){
+last =  last * 10 + s[i++] - '0';
+}
+if(last_operator == '*') last_result *= last;
+else if(last_operator == '/') last_result /= last;
+​
+else  last_result = last;
+}
+}
+return sum;
+}
+};
+```
