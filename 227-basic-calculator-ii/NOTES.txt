@@ -1,3 +1,6 @@
+when we read 2, because the operator before 2 is '+', so 2 is the beginning number of the new operand, so we set tempresult = (+) 2;
+when we read *, last_operator is set to be *
+when we read 3, tempresult = (+) 2*3
 when we read '-', last_operator is set to be '-'
 when we read 5, we check the operator before 5 is '-' which indicates the end of current tempresult, so we update final answer, ans = 1 + 2*3, and interim is reset to be (-) 5;
 when we read '/', last_operator is set to be '/'
@@ -42,11 +45,3 @@ last =  last * 10 + s[i++] - '0';
 }
 if(last_operator == '*') last_result *= last;
 else if(last_operator == '/') last_result /= last;
-​
-else  last_result = last;
-}
-}
-return sum;
-}
-};
-```
