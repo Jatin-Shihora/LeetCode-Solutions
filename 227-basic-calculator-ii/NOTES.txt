@@ -1,3 +1,25 @@
+The question is quiet simple we are given a `s` where `s` consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces. We need to do four basic calculator ) operations ('+', '-', '*', '/').
+​
+**Intuition:-**
+We need to do four basic operation `+ , - , * , /`  . For better understanding of calculations let's take a example  "1 + 2*3 - 5/4 " :
+The gist of the solution can be Every time we got a number, we will aggregate it into the temp result. when we met '+' or '-' , tempresult will be aggregated into the final result sum.
+​
+​
+**Algorithm:-**
+1. Firstly we will need some variables like `sum` for storing the result, `last_result` for storing the tempresults , `last_operator` for storing the last operator we saw while traversing and the base case can be when size of `s` is 0 .
+2. After the basic initialization. Let's traverse `s` . while traversing `s` there are multiple conditions we need to check .
+* Condition1: If we found any white spaces we need to skip it.
+* Condition2: If we get an operator as '+' or '-' we will add this with the last_result
+esle If we get an operator as '/' or `*` we will upadte the last_operator as that operator
+* Condition3: Now while traversing if we found digits, we will pick it up and if the last_operator was `*`  do `last_result *= last` else if the operator will be `/` then do
+`last_result /= last;`
+* Condition4: `last_result = last ` :))
+​
+**Let's take a dry run before we start the code:-**
+​
+last_operator is set to be '+'
+when we read '1', we check the operator before 1, it's '+', so first tempresult is 1, and "ans = 1";
+when we read '+', last_operator is again reseted to be '+'
 when we read 2, because the operator before 2 is '+', so 2 is the beginning number of the new operand, so we set tempresult = (+) 2;
 when we read *, last_operator is set to be *
 when we read 3, tempresult = (+) 2*3
@@ -21,27 +43,3 @@ int i = 0 , sign = 1;
 char last_operator = '+'; //we need to remember the last operator
 ​
 //Traverse the given string s
-while(i <= s.size()){
-//Condition 1
-if(s[i] == ' '){++i; continue;}
-​
-//Condition 2
-if(s[i] == '+' || s[i] == '-' || !s[i]){ //Check the end of the string
-sum += last_result * sign;
-sign = s[i++] == '+' ? 1 : -1;
-last_result = 1;
-last_operator = '+';
-}
-else if(s[i] == '/' || s[i] == '*'){
-last_operator = s[i];
-++i;
-}
-​
-//Condition 3
-if(isdigit(s[i])){
-last = 0;
-while(i < s.size() && isdigit(s[i])){
-last =  last * 10 + s[i++] - '0';
-}
-if(last_operator == '*') last_result *= last;
-else if(last_operator == '/') last_result /= last;
