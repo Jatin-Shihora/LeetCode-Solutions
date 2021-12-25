@@ -6,7 +6,7 @@ public:
     int i = 0; 
     long long last = 0, last_result = 1;  
     char last_operator = '+'; //remember the last operator
-    long sign = 1; 
+    int sign = 1; 
     while(i < s.size()){
         if(s[i] == ' '){++i; continue;}
         if(s[i] == '+' || s[i] == '-'){
