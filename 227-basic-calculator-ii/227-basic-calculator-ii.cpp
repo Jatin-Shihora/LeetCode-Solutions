@@ -3,7 +3,7 @@ public:
  int calculate(string s) {
     int sum = 0; 
     if(s.size() < 1) return sum; 
-    long long i = 0; 
+    int i = 0; 
     long long last = 0, last_result = 1;  
     char last_operator = '+'; //remember the last operator
     long sign = 1; 
