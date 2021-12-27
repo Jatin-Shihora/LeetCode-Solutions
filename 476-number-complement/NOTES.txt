@@ -1,0 +1,22 @@
+Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+​
+**Intuition:-**
+There is not much of a intuition in this question as the question is loud and clear about it's use of bit manipulation .
+​
+To make things a bit more interesting let's do this question with and wihout bit manipulation
+​
+**Using Bit Manipulations*
+​
+**Code1:-**
+```
+class Solution {
+public:
+int findComplement(int num) {
+unsigned mask = ~0;
+while( mask & num ) mask = mask << 1;
+return ~num ^ mask;
+}
+};
+```
+​
+C
