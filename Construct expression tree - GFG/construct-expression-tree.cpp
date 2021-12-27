@@ -76,7 +76,7 @@ et* constructTree(char postfix[])
     int n = strlen(postfix);
     for(int i=0;i<n;i++){
         if(isalpha(postfix[i])){
-            et *node = (struct et *)malloc(sizeof(struct et));
+            et *node = (struct et *)malloc(sizeof(struct et)); //new mpde allocation
             node->value = postfix[i];
             node->left = 0;
             node->right = 0;
