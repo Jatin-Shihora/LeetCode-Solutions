@@ -1,0 +1,22 @@
+int middle = length/2;
+temp=head;
+//traversing temp node back to middle node #O(n/2)
+while(temp && middle--)
+temp=temp->next;
+return temp;
+}
+};
+```
+**Time Complexity:** *`O(n)+O(n/2) = O(n)`*
+**Space Complexity:** *`O(1)`*
+​
+**Two Pointer Algortihm or Tortoise and Hare Algorithm :**
+1. Initialize the two pointers `slow` and `fast` at the head of linked list .
+2. Now every time, slow goes 1 step while fast go 2 steps.
+When fast pointer arrives at the end, slow pointer will arrive right in the middle of our linked list .
+3. Now just return the value of slow pointer .
+​
+**Code:-**
+```
+​
+```
