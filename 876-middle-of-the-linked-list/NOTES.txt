@@ -1,13 +1,32 @@
-int middle = length/2;
-temp=head;
-//traversing temp node back to middle node #O(n/2)
 while(temp && middle--)
 temp=temp->next;
 return temp;
 }
 };
 ```
-**Time Complexity:** *`O(n)+O(n/2) = O(n)`*
+**JAVA Brute Force Code:-**
+```
+class Solution {
+public ListNode middleNode(ListNode head) {
+ListNode temp = head;
+int length=0;
+//Traversing temp till the end of linked list to find length #O(n)
+while(temp!=null){
+temp = temp.next;
+length++;
+}
+int middle = length/2;
+temp=head;
+//traversing temp node back to middle node #O(n/2)
+while(middle != 0){
+temp = temp.next;
+middle--;
+}
+return temp;
+}
+}
+```
+**Time Complexity:** *`O(N)+O(N/2) = O(N)`*
 **Space Complexity:** *`O(1)`*
 ​
 **Two Pointer Algortihm or Tortoise and Hare Algorithm :**
@@ -16,7 +35,12 @@ return temp;
 When fast pointer arrives at the end, slow pointer will arrive right in the middle of our linked list .
 3. Now just return the value of slow pointer .
 ​
-**Code:-**
+**C++ CODE:-**
 ```
-​
+ListNode* middleNode(ListNode* head) {
+ListNode *slow = head, *fast = head;
+while (fast && fast->next)
+slow = slow->next, fast = fast->next->next;
+return slow;
+}
 ```
