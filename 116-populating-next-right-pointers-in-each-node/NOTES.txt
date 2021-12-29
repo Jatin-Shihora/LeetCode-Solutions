@@ -1,0 +1,37 @@
+**Intuition:-**
+We are given a prefect binary tree that means every parent has two children and all the leaves are on the same level . This question is an superior version of  binary level order traversal .In level order traversal you will traverse each level of binary tree while outputting the data in that form . So the only difference is that somehow we need to connect the previous levels rightmost node to the next level's leftmost node and that's it .
+​
+**Algorithm:-**
+1. Base case: if the root is null than return null
+2. Now to connect the left subtree of same level with right subtree of that level
+3. The only new line that differentiate from level order traversing is that we need to connect the rightmost node of a level to the leftmost node of the next level.
+4. Now just repeat the steps over and over for every level of tree .
+​
+**we can code this approach by two methods:**
+1. By recursive
+2. Iterative
+Both solution has time complexity and space complexity as O(n) and O(1) in a virtual manner but if we consider in a true sense than in recursion we use a recursive stack which has some space complexity .
+So in a real sense the iterative solution is the best since it has truly O(1) space complexity .
+​
+**Recursive Approach Code:-**
+```
+class Solution {
+public:
+Node* connect(Node* root) {
+//base case
+if(root == NULL) return NULL;
+//connects the left subtree of same level with right subtree of that same level
+if(root->left != NULL) root->left->next = root->right;
+//connect the rightmost node of a level to the leftmost node of the next level.
+if(root->right != NULL && root->next != NULL) root->right->next = root->next->left;
+//recursive calls for left and right subtrees.
+connect(root->left);
+connect(root->right);
+return root;
+}
+};
+```
+​
+**Iterative Approach:-**
+In iterative approach we will be needing two more pointers named as `curr` and `prev` for linking of left and right nodes
+​
