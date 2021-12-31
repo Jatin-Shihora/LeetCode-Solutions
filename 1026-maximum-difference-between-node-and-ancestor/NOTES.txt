@@ -1,1 +1,12 @@
+>In simple language the problem is asking us to find a max difference between a ancestor node and a child node .
+<mark>Before starting with anything: A ancestor node is a node that is at the upper level of the given node [i.e child node]</mark>
+​
+**Intutions:-**
+If we want to find the absolute maximum diference between ancestor node and a child node . At first we need to find the max node value of a ancestor an a min node vaue for child node of that ancestor node **or** since they have wrote that the difference is absolute between ancestor node and child node .so we can also find a min ancestor and a max child node. since it doesn't matter that the answer came is negative or positive in the end its gonna be absolute.
+​
+**Algorithm:-**
+For every node we have to calcuate the left minimum, left maximum, right minimum,right maximum and find the effective difference between the root and the max of left right and min of left right and we will get our answer.
+We can use recursion to find out the minimum and maximum values on the go.
+​
+**Code:-**
 ​
