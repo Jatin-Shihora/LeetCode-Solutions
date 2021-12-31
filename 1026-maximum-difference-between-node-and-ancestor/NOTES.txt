@@ -1,12 +1,30 @@
 >In simple language the problem is asking us to find a max difference between a ancestor node and a child node .
-<mark>Before starting with anything: A ancestor node is a node that is at the upper level of the given node [i.e child node]</mark>
-​
+<mark>Before starting with anything: **A ancestor node** is a node that is at a upper level of a given node</mark>
+***
 **Intutions:-**
 If we want to find the absolute maximum diference between ancestor node and a child node . At first we need to find the max node value of a ancestor an a min node vaue for child node of that ancestor node **or** since they have wrote that the difference is absolute between ancestor node and child node .so we can also find a min ancestor and a max child node. since it doesn't matter that the answer came is negative or positive in the end its gonna be absolute.
-​
+***
 **Algorithm:-**
 For every node we have to calcuate the left minimum, left maximum, right minimum,right maximum and find the effective difference between the root and the max of left right and min of left right and we will get our answer.
 We can use recursion to find out the minimum and maximum values on the go.
+***
+**Code:-**
+```
+class Solution {
+public:
+int maxAncestorDiff(TreeNode* root, int mini = INT_MAX, int maxi = INT_MIN) {
+// base case
+if (!root) return (maxi - mini);
+// update mini and maxi
+mini = min(mini, root->val), maxi = max(maxi, root->val);
+// finding the maximum distance we would like to find by going left and right
+return max(maxAncestorDiff(root->left, mini, maxi), maxAncestorDiff(root->right, mini, maxi));
+}
+};
+```
 ​
+Since everyone is trying one liners in this questtion i'm also gonna do a move known as programmer's move :))
 **Code:-**
 ​
+**Time Complexity :** *`O(n)[If we dont count the recursive stack then its O(1)]`*
+**Space Complexity :** *`O(1)`*
