@@ -11,12 +11,12 @@
  */
 class Solution {
 public:
-    int maxAncestorDiff(TreeNode* root, int minV = INT_MAX, int maxV = INT_MIN) {
-        // exit condition, when a leaf is met
-        if (!root) return (maxV - minV);
-        // updating minV and maxV
-        minV = min(minV, root->val), maxV = max(maxV, root->val);
-        // computing the maximum distance we would find going left and right
-        return max(maxAncestorDiff(root->left, minV, maxV), maxAncestorDiff(root->right, minV, maxV));
+    int maxAncestorDiff(TreeNode* root, int mini = INT_MAX, int maxi = INT_MIN) {
+        // base case
+        if (!root) return (maxi - mini);
+        // update mini and maxi
+        mini = min(mini, root->val), maxi = max(maxi, root->val);
+        // finding the maximum distance we would like to find by going left and right
+        return max(maxAncestorDiff(root->left, mini, maxi), maxAncestorDiff(root->right, mini, maxi));
     }
 };
