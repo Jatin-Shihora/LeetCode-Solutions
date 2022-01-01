@@ -1,0 +1,26 @@
+i ..........k-1....k...k+1.......... j
+[- - - - - - - - - - - - - - - ]
+​
+Till now we are bursting a balloon let's say k'th balloon and we are getting the coins by multiplying the (k-1)th * k'th * (k+1)th balloons . As the balloon k is already burst, we solve the subproblems from i to k -1 and k + 1 to j. But wait, what's going wrong here? The subproblem solve(nums, i, k - 1) and solve(nums, k + 1, j) are not independent since after bursting kth balloon, balloon k - 1 and k + 1 have become adjacent and they will need each other in order to calculate the max profit of coins . So in the end the we are facing the isusue in the problem. The issue is that as the left and right become adjacent they will effect the maxCoins in the future calculation . We don't want this thing to happen .
+​
+**6th Intuition:-**
+The above issue will happen in every kth balloon but but there is one exception to this i.e if We choose the kth balloon as the last one to be burst then the subproblems will become independent since (k - 1)th balloon and (k + 1)th balloon won't need each other in order to calculate the answer. WHY? THINK MY FRIENDS!!!
+​
+**7th Intuition:-**
+So to answer the 6th Ituition if we think with a pen and paper we get that becuase only the first and last balloons aree the balloons where we are sure of their adjacent balloons before hand! Because
+For the first we have nums[k-1] * nums[k] * nums[k+1]  and for the last we have nums[-1] * nums[k] * nums[n] .
+OK. Think about n balloons if j is the last one to burst,  We can see that the balloons are again getting separated into 2 sections. But this time since the balloon j is the last balloon of all to burst, the left and right section now has well defined boundary and do not affect each other! Thus now we can do either recursive with memoization or our favourite dp .
+​
+**Final Intuition**
+Let's recap a bit:
+* Edge case : Pad the beginning + end of the array with a virtual 1, since the problem defines it this way, it won't affect the final value, and most importantly it eliminates the need to deal with these special cases
+* Realize that working backwards will allow us to cleanly divide the array into subproblems
+* Pop all the 0 balloons first and remove them from the array (since they are worth nothing)
+* Now there are 3 variables in our main equation: the values of the 3 balloons to pop. Again, we use the two 1's we just padded the array with to eliminate two of those variables off the bat
+* Now just try all the possible middle balloons to pop (the 3rd variable). For each balloon we choose, use it as the right and left ballon of the next level of recursion, along with the padded 1's, and so forth.
+* Base case is when there are no more balloons between the left and right balloon indexes (left+1 == right)
+​
+**Code:-**
+```
+​
+```
