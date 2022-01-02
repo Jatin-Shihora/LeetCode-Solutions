@@ -1,10 +1,30 @@
-**Reframing the Question:-**
-We are given a time array with time duration a song has . we need to find different number of **pairs** of songs for whch their total duration in seconds is **divisible by 60 .**
-​
-**Intuition:-**
-A simple intuition can be that we need to find the reminder of the total duration of pairs which is divisible by 60 .
-In simple words we need to calculate `time % 60`
-Also come to think of it, the different pair combinations which can give us our result can be stored with the **help of hashing.**
-​
-Algorithm:-
-​
+```
+class Solution {
+public:
+int numPairsDivisibleBy60(vector<int>& time) {
+int map[60] = {};
+int result = 0;
+for(auto x:time){
+int t = x % 60;
+int y = (60 - t)%60;
+result += map[y];
+map[t]++;
+}
+return result;
+}
+};
+```
+***
+**Python Code:-**
+```
+class Solution(object):
+def numPairsDivisibleBy60(self, time):
+mapp = [0] * 60
+result = 0
+for x in time:
+result += mapp[-x % 60]
+mapp[x % 60] += 1
+return result
+```
+**Time Complexity :** *`O(n) (where n is the size of time)`*
+**Space Complexity :** *`O(60) (Can be cconsidered O(1) if the time duration 60s is treated as constant )`*
