@@ -1,0 +1,10 @@
+**Reframing the Question:-**
+We are given a time array with time duration a song has . we need to find different number of **pairs** of songs for whch their total duration in seconds is **divisible by 60 .**
+​
+**Intuition:-**
+A simple intuition can be that we need to find the reminder of the total duration of pairs which is divisible by 60 .
+In simple words we need to calculate `time % 60`
+Also come to think of it, the different pair combinations which can give us our result can be stored with the **help of hashing.**
+​
+Algorithm:-
+​
