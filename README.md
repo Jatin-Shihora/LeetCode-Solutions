@@ -1,2 +1,2 @@
 # LeetCode & GFG-Solutions
-Collection of LeetCode , GFG questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub).
+*This are the Collections of LeetCode , GFG questions that I have solved till now* !!
