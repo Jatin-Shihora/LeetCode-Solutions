@@ -1,12 +1,13 @@
-Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.
+Given a positive integer, output its **complement number**. The complement strategy is to flip the bits of its binary representation i.e if it's **101** =Complement=> **010**
 ​
 **Intuition:-**
 There is not much of a intuition in this question as the question is loud and clear about it's use of bit manipulation .
 ​
 To make things a bit more interesting let's do this question with and wihout bit manipulation
 ***
-* **Using Bit Manipulations:---**
-​
+***
+**Using Bit Manipulations:-**
+***
 **Bit masking can be summarized with this image (^_^)**
 ![image](https://assets.leetcode.com/users/images/d478c8d2-3fbb-49fd-956a-ae31a014a926_1640579005.4899502.jpeg)
 Thus, we can conclude that masking means to keep/change/remove a desired part of information.
@@ -14,7 +15,7 @@ Thus, we can conclude that masking means to keep/change/remove a desired part of
 **Dry run of bitmasking:-**
 ![image](https://assets.leetcode.com/users/images/face3402-7526-4282-becd-7564dc8b4a95_1640574890.4955626.png)
 ***
-**Code1[Using bitmasking]:-**
+**Code[Using bitmasking]:-**
 ```
 class Solution {
 public:
@@ -29,11 +30,11 @@ return ~num ^ mask;
 ```
 **Time Complexity:** *`O(log(num))`*
 **Space Complexity:** *`O(1)`*
-​
 ***
-**Code2 [Using xor] :-**
+***
+**Using XOR**
 Basic idea is to find the smallest power of 2 that is larger than the `input number num`, and output the difference between `powerof2s` and `num` .
 ​
-**Dry run:-**
+**Dry run of XOR:-**
 ```
 For example :-
