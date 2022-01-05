@@ -1,0 +1,14 @@
+**Reframing the question:-**
+Find all the substrings which satisfies the palindrome condition of larger string s
+​
+**Intuition:-**
+* The structure of the question is quite clear that it **promotes the use of recursion** . The recursion approach of this question can be like:  we start iteration from beginning and step by step we increase the size of substr that we are checking for palindromes . Once the palindrome substr is found ,the substr needs to go to a vector/list storing those palindromes substr . This is how the brute recursion will work .
+* The **optimization** of the above recursion is **backtracking**.
+A **backtracking algorithm uses the depth-first search method**. When it starts exploring the solutions, a bounding or a helper function is applied so that the **algorithm can check if the so-far built solution satisfies the constraints**. If it does, it continues searching. If it doesn’t, the branch would be eliminated, and the algorithm goes back to the level before. In simple words backtracking starts from some intermediate position where there is still a hope to get a new palindrome .
+* In backtracking algo there is **always a helper metod** or a safe checker merhod which checks whether the built soution satisifes the conditions or not . This one thing has **certainity of 100% **.
+​
+**Algorithm :-**
+1. As i told you in backtracking one thing is sure that is a helper method. In our problem we will need a bool helper method which checks the palindrome condition let's name it as `bool isPalindrome()` .
+2.Now let's create some variables : `result` vector for storing all the substring which satisfies the palindrome condition , `path` vector for storing the ongoing substr which has the potential of satisfying the condition of palindromes.
+3.
+​
