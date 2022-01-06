@@ -1,0 +1,25 @@
+**Reframing the question :-**
+At first I am gonna treat the car as a one side door bus [will explain you later] . This bus has got a integer `capacity` empty seats and an array `trips` where there is one more array inside it `trip[i]` depicting `[number of passangers , from this location, to that location ]` Also ,This bus has got some weakness that is it can drive in only one direction and cannot turn around . we need to return true if it is possible to pick up and drop off all passenger for all the given trips .
+Let's discuss a example 2 from description :-
+```
+Input: trips = [[2,1,5],[3,3,7]], capacity = 5
+So in input “trips” the trip[2, 1, 5] means 2 passengers are going to the location 5 from position 1. &
+[3, 3, 7] means 3 passnegers are going to the location 7 from position 3 . 5
+We are given capacity of passengers to seat at a time as 5 .
+so in the first trip [2, 1, 5] there are 2 passnegers waiting at location 1 to goto location 5
+so the 5 seater bus picks those 2 . and the capacity is decreased now to 3
+now the bus covers some distance and comes to location 3 .
+At location 3 there are 3 passengers waiting to goto location 7 .since the capacity is now 3
+The bus picks them all .
+So now the bus is travelling and reached the location 5 and thus passsengers of location 1 to 5 left the bus . so the capacity increased to 2 .
+The bus continues to travel and reaches the location 7 and thus the second set of passengers from location 3 to location 7 left the bus . So the capacity got replenished to 5
+​
+Now Return true since all the trips can be sent to the destination.
+​
+If the capacity would have been 4 than it would have return false [Example 1 from description]
+​
+The reason why I used bus instead of car is because it stores passengers such that the ones who will get off soon should sit near the front. The bus receives information about its next trip to make, and if the next trip’s start location is beyond what the current passengers destinations, those current passengers get off . So you can see it's more like a bus in real life :)
+```
+​
+**Intuition:-**
+* In question they told us that the bus(or car) can go in one direction and cannot turn back. That's why we first sort the start location
