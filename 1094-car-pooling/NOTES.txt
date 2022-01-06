@@ -1,6 +1,8 @@
 **Reframing the question :-**
-At first I am gonna treat the car as a one side door bus [will explain you later] . This bus has got a integer `capacity` empty seats and an array `trips` where there is one more array inside it `trip[i]` depicting `[number of passangers , from this location, to that location ]` Also ,This bus has got some weakness that is it can drive in only one direction and cannot turn around . we need to return true if it is possible to pick up and drop off all passenger for all the given trips .
-Let's discuss a example 2 from description :-
+* At first I am gonna treat the car as a one side door bus [will explain you later] . This bus has got a integer `capacity` empty seats and an array `trips` where there is one more array inside it `trip[i]` depicting `[number of passangers , from this location, to that location ]`
+* Also ,This bus has got some weakness that is it can drive in only one direction and cannot turn around . we need to return true if it is possible to pick up and drop off all passenger for all the given trips .
+​
+**Let's discuss a example 2 from description :-**
 ```
 Input: trips = [[2,1,5],[3,3,7]], capacity = 5
 So in input “trips” the trip[2, 1, 5] means 2 passengers are going to the location 5 from position 1. &
@@ -22,4 +24,13 @@ The reason why I used bus instead of car is because it stores passengers such th
 ```
 ​
 **Intuition:-**
-* In question they told us that the bus(or car) can go in one direction and cannot turn back. That's why we first sort the start location
+* In question they told us that the bus(or car) can go in one direction and cannot turn back. That's why we first sort the start location . After that as a passanger goes inside the vehicle the `capacity` should be reduced and in vice-versa case increase the capacity .
+* Then if at any time `capacity` is less than the `number of passengers` than `return false`
+​
+**Algorithm:-**
+1. First we need to sort the locations . So to do this we will be using a map named as `sortedmap` since map is sorted on keys and key is time instant .
+2. After sorting the start location we traverse the whole `trips` array in which we initiate picking up and dropping of the passangers .
+3. Now check if the `capacity` is less than 0, if true then return false .
+​
+**Code:-**
+​
