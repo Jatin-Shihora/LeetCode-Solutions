@@ -1,10 +1,3 @@
-The reason why I used bus instead of car is because it stores passengers such that the ones who will get off soon should sit near the front. The bus receives information about its next trip to make, and if the next trip’s start location is beyond what the current passengers destinations, those current passengers get off . So you can see it's more like a bus in real life :)
-```
-​
-**Intuition:-**
-* In question they told us that the bus(or car) can go in one direction and cannot turn back. That's why we first sort the start location . After that as a passanger goes inside the vehicle the `capacity` should be reduced and in vice-versa case increase the capacity .
-* Then if at any time `capacity` is less than the `number of passengers` than `return false`
-​
 **Algorithm:-**
 1. First we need to sort the locations . So to do this we will be using a map named as `sortedmap` since map is sorted on keys and key is time instant .
 2. After sorting the start location we traverse the whole `trips` array in which we initiate picking up and dropping of the passangers .
@@ -17,15 +10,25 @@ public:
 bool carPooling(vector<vector<int>>& trips, int capacity) {
 map<int, int> sortedmap;
 for (int i = 0; i < trips.size(); ++i) {
-sortedmap[trips[i][1]] += trips[i][0]; // picking up the passengers
-sortedmap[trips[i][2]] -= trips[i][0]; //droping off the passengers
+sortedmap[trips[i][1]] += trips[i][0]; // picking up the passengers resulting in occupany in filling of seats
+sortedmap[trips[i][2]] -= trips[i][0]; //droping off the passengers resulting in reduction of filling of seats
 }
 for (auto it = sortedmap.begin(); it != sortedmap.end();it++) {
 capacity -= it->second;
-if (capacity < 0)
-return false ;
+if (capacity < 0) return false;
 }
 return true;
 }
 };
+```
+​
+**Optimization by exploiting the constraints :-**
+* An optimization of the above algo can be that we Initialize a array named as `travelling` to size 1001 since maximum seats can be 1000
+* Now we will keep track of number of passengers at any point using the `travelling` array.
+* For any trip we will add the number of passengers at the starting location and remove that number of passengers at end location  since they will leave the vehicel at that location.
+* Now if we think at certain loaction i there will be maximum number of passangers in the vehicle if that maximum passanger count is greater than the `capacity` then return false.
+​
+**Code:-**
+```
+​
 ```
