@@ -1,18 +1,11 @@
 class Solution {
 public:
-    bool carPooling(vector<vector<int>>& trips, int capacity) {
-        vector<int> stops(1001); 
-        int max=INT_MIN;
-        for (vector<int>& trip: trips){
-            stops[trip[1]] += trip[0]; 
-            stops[trip[2]] -= trip[0];
-            if(trip[2] > max) max=trip[2];
-        }
-        int n = 0; 
-        for (int i = 0; i <= max; ++i){
-            n += stops[i]; 
-            if (n > capacity) return false;
-        }
-        return true; 
-    }
+   bool carPooling(vector<vector<int>>& trips, int capacity) {
+    int stops[1001] = {};
+    for (auto t : trips) 
+        stops[t[1]] += t[0], stops[t[2]] -= t[0];
+    for (auto i = 0; capacity >= 0 && i < 1001; ++i)
+        capacity -= stops[i];
+    return capacity >= 0;
+}
 };
