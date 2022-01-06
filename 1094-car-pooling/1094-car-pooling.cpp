@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool carPooling(vector<vector<int>>& trips, int capacity) {
-        map<int, int> sortedmap;
-        for (int i = 0; i < trips.size(); ++i) {
-             sortedmap[trips[i][1]] += trips[i][0]; // picking up the passengers
-             sortedmap[trips[i][2]] -= trips[i][0]; //droping off the passengers
+        vector<int> curr(1001);
+        int sum = 0;
+        for(auto a : trips){
+            curr[a[1]] += a[0];
+            curr[a[2]] -= a[0];
         }
-        for (auto it = sortedmap.begin(); it != sortedmap.end();it++) { 
-            capacity -= it->second;
-            
-            if (capacity < 0) return false;
+        for(int i = 0; i <= 1000; i++){
+            sum += curr[i];
+            if(sum > capacity) return false;
         }
         return true;
     }
