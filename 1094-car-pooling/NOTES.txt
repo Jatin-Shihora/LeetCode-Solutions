@@ -1,11 +1,3 @@
-The bus picks them all .
-So now the bus is travelling and reached the location 5 and thus passsengers of location 1 to 5 left the bus . so the capacity increased to 2 .
-The bus continues to travel and reaches the location 7 and thus the second set of passengers from location 3 to location 7 left the bus . So the capacity got replenished to 5
-​
-Now Return true since all the trips can be sent to the destination.
-​
-If the capacity would have been 4 than it would have return false [Example 1 from description]
-​
 The reason why I used bus instead of car is because it stores passengers such that the ones who will get off soon should sit near the front. The bus receives information about its next trip to make, and if the next trip’s start location is beyond what the current passengers destinations, those current passengers get off . So you can see it's more like a bus in real life :)
 ```
 ​
@@ -25,8 +17,8 @@ public:
 bool carPooling(vector<vector<int>>& trips, int capacity) {
 map<int, int> sortedmap;
 for (int i = 0; i < trips.size(); ++i) {
-sortedmap[trips[i][1]] += trips[i][0]; //filled seats increase when we pick up passengers
-sortedmap[trips[i][2]] -= trips[i][0]; //filled seats decrease when we drop off the passengers
+sortedmap[trips[i][1]] += trips[i][0]; // picking up the passengers
+sortedmap[trips[i][2]] -= trips[i][0]; //droping off the passengers
 }
 for (auto it = sortedmap.begin(); it != sortedmap.end();it++) {
 capacity -= it->second;
