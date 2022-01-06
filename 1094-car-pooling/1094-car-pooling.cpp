@@ -8,9 +8,8 @@ public:
         }
         for (auto it = sortedmap.begin(); it != sortedmap.end();it++) { 
             capacity -= it->second;
-            if (capacity < 0) { //if at any time instant, vacant seats < no of passengers to pick up, return false
-                return false;
-            }
+            
+            if (capacity < 0) return false;
         }
         return true;
     }
