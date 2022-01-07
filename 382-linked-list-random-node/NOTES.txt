@@ -1,0 +1,21 @@
+**Reframing the question:-**
+> Retrun a random node from linked list. Each node should have same probability to get chosen .
+​
+**Intuition :-**
+* One way to solve this question can be that, we first traverse the entire linkedlist and thus we get to know the length of linkedlist .After ths we just call a random node with the help of `rand( )%length` .
+* The second way is not something that comes with intuition it's something that needs to be informed .It's the famous **reservoir sampling method .**
+​
+**The Reservoir sampling method:-**
+> No need to get feared It's a basic algo not some bigshot hightech algorithm :) . So beforehand let's discuss a bit about probability .
+* When we read the first node head, if the stream ListNode stops here, we can just return the head->val. The probability of picking here is 1/1 .
+* When we goto second node we can decide if we replace the `result r` or not. The possibility is 1/2. So now we need to genereate a random number between 0 & 1 and if it is equals to 1 replace r with the current node else we don't traumantize r, so it's value is till the value of head .
+* Now let's goto third node and we can decide if we can replace the `result r or not` . The probability of picking the third node will be 1/3 . and not picking up will be 2/3 . So now we generate a random number between 0-to-2 if the result is 2 then we replace r with the `value of indexed node 2`
+* We need to continue this till the end of list node .
+* *To conclude, if we have n different balls than the equal probability of picking any one of them will be 1/n .*
+* Now that's it this is what reservoir sampling method looks like, told you its easy ;)
+​
+**Code:-**
+```
+​
+```
+​
