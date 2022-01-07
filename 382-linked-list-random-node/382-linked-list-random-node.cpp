@@ -18,13 +18,13 @@ public:
     
     int getRandom() {
         int res, len = 1;
-        ListNode* v = HeadNode;
-        while(v){
+        ListNode* x = HeadNode;
+        while(x){
             if(rand() % len == 0){
-                res = v->val;
+                res = x->val;
             }
             len++;
-            v = v->next;
+            x = x->next;
         }
         return res;
     }
