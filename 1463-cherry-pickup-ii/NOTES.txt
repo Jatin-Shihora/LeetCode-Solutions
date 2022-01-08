@@ -1,3 +1,19 @@
+* Since we have 3 directions for each robot so at each row there are 9(3 x 3) states that we can move to. (3 states for the first robot and 3 states for the second robot so it's 3 x 3.
+* Hey cosmic, but you never told us what are those 9 states ?
+yes, I will tell you about all the 9 states :) .
+```
+dp[r - 1][c1 - 1][c2 - 1],
+dp[r - 1][c1 - 1][c2],
+dp[r - 1][c1 - 1][c2 + 1],
+dp[r - 1][c1][c2 - 1],
+dp[r - 1][c1][c2],
+dp[r - 1][c1][c2 + 1],
+dp[r - 1][c1 + 1][c2 - 1],
+dp[r - 1][c1 + 1][c2],
+dp[r - 1][c1 + 1][c2 + 1]
+```
+Since we need to return max number of cherrys i.e in a more technical way we need to find max of all the 9 states i.e `max (all 9 states)`
+​
 **Intuition 5:-**
 Remember there was one case where there is a clash of position in robos . Like both the robos moved to the same position , In this case we can simply use a `if condition` to give the cherry's to one robo .
 `(c1 == c2) ? (dp[r][c1][c2] = prevMax + grid[r][c1]) : (dp[r][c1][c2] = prevMax + grid[r][c1] + grid[r][c2]) ;`
