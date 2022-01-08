@@ -1,0 +1,16 @@
+**Intuition 5:-**
+Remember there was one case where there is a clash of position in robos . Like both the robos moved to the same position , In this case we can simply use a `if condition` to give the cherry's to one robo .
+`(c1 == c2) ? (dp[r][c1][c2] = prevMax + grid[r][c1]) : (dp[r][c1][c2] = prevMax + grid[r][c1] + grid[r][c2]) ;`
+​
+**Intuiton 6:-**
+Let's collect our thought for this intuition.
+Till now we can decide the dimensions of dp, Recursion formula , one edge case of collision. So we can say that we will be needing 3ree for loops .You say why and I say this becuase we will be needing one for loop for iterating rows & Two for the columns
+​
+**Last Intuition:-**
+Pheww that was a lot of understanding .
+Now in the end we just need to compute the maximum of the last dp row of the dp array by using `res = max ( res, dp[m - 1][i][j] )`
+​
+**Code:-**
+```
+​
+```
