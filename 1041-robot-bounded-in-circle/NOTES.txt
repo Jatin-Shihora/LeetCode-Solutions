@@ -1,0 +1,29 @@
+**Reframing of question :-**
+There is a robo who stands at (0,0) and faces north . The robo has three functionalities
+1. "G" =>go straight 1 unit.
+2. "L" =>turn 90 degrees to left.
+3. "R"=>turn 90 degrees to right.
+​
+**@@A very imp note:-** *The robot performs the instructions given in order, and repeats them forever.*
+Return true if the robo comes back to his original position after executing the instructions else return false .
+​
+**Intuition:-**
+The intuition we can get from question is that if the robo comes back to origin we return true and if not than return false . Let's understand more from the below examples :)
+​
+**Now let's take some example dry runs :-**
+​
+​
+*From the above dry runs we can conclude that:-*
+* If the robo comes back to origin the answer is true.
+* If the robo is facing NORTH direction the answer is always false since we are drifting away from origin.
+* If the robo is facing any direction except north the answer will be  true since it will became a loop and come back to origin
+​
+**Algorithm:-**
+1. Let `x` and `y` be the co-ordinate points and the ongoing direction that robo depicts be as `current_dir` . Let the 4 directions be North `N`, South `S`, West `W`, EAST `E` . Let current instruction char be depicted by `incoming` .
+2. After initialization we will create a `originVerifier`  function to chek whether the co-ordinates are origin or not
+3. We need to loop the `instructions` . During the treaversing of string `instructions ` we have two cases
+* **1st case:-** If we get `G` as instuction than we need to go straight 1 unit in that current direction
+* **2nd case:-** In this case there is a chance that we will face directions  `N`, `S`, `W`, `E`. Once we find any of this direction just replace the currrent direction with this direction .
+4. Now if the robo is at origin or the current direction is not north than return trueor else reutn false [Discussed during dry run
+​
+**Code:-**
