@@ -1,0 +1,18 @@
+> Given two binary strings a and b, return their sum as a binary string.
+​
+**Intuition:-**
+There will be many different intuitions in this question
+* Easy but long way is to convert `a` and `b` to decimal then add them and convert the result back to binary and return the result .
+* A optimized approach can be to simply do the `binary addition` in a `result` variable and return the result .
+* A well optimized approach can be that we just write the sum into the longer one of the inputs and return that as result. In this case space complexity will become O(1) .
+​
+​
+**Algorithm :-**
+* Intialize i & j index for a and b from last character index of a & b .
+* Now loop till the both index reaches 0 and add last bit of both the string along wtih carry.
+* Reminder from 2 is the new bit we are dicussing and divide by 2 gives us our carry
+​
+​
+Code
+​
+​
