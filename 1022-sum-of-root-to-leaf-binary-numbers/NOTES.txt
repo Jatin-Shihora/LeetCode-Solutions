@@ -14,8 +14,26 @@ Just a small detail given in the question we all should remember :)
 * **Let's see how the space and time is reduce ^_^ :-** The in recursion call is done for all nodes in O(n) both number formation and binary conversion are done in O(1). and the space used will be O(h) for recursion ,where h is the height of the tree.
 ***
 **Code:-**
+*DFS call will be like :0*
+```
+if(root->left == root->right)
+val ;
+else
+sumRootToLeaf(root->left, val) + sumRootToleaf(root->right, val) ;
+```
+*Wan't to do some fun?!! let's do this using ternary operator ~0~*
+```
+return (root->left == root->right ? val : sumRootToLeaf(root->left, val) + sumRootToLeaf(root->right, val));
 ```
 ​
+**Final Code:-**
 ```
-​
-​
+class Solution {
+public:
+int sumRootToLeaf(TreeNode* root, int val = 0) {
+if (!root) return 0;//base condition
+val = (val * 2 + root->val);
+return (root->left == root->right ? val : sumRootToLeaf(root->left, val) + sumRootToLeaf(root->right, val));//dfs call
+}
+};
+```
