@@ -1,3 +1,13 @@
+Hello Everyone !! Hope you all are doing fine
+Let's get the question rolling ...
+***
+So we are given the root of a binary tree where every node has a value of 0 or 1. We need to travel each path from root to leaf and convert it to decimal from binary and do summation of all paths like this .
+​
+Just a small detail given in the question we all should remember :)
+> Each root-to-leaf path represents a binary number **starting with the most significant bit.**
+***
+**Intuition:-**
+* So the majority of us got the intuition to find every path of binary tree by dfs and convert that path to decimal base from binary base but wait, is that a feasible way ?
 * Nope, don't thinks so. why ? Becuase, To make so many travels to find path and then take separate time to convert to Binary. Hence we are compromsing both time and space i.e time complexity will be O(n^2) and space O(n) !!!!!
 **So lesss go and understand an optimal solution :)**
 * So what if we traverse each node... convert..... and at the same time form its binary! While you are making a recursive call when traversing each node, You form the binary number by adding to previously found binary of that number and at the end which is when the node is a leaf node i.e both left and right are NULL then we know that our number has successfully formed and we add it to our ans. Booom we got the optimization.
@@ -20,22 +30,3 @@ return (root->left == root->right ? val : sumRootToLeaf(root->left, val) + sumRo
 ```
 class Solution {
 public:
-int sumRootToLeaf(TreeNode* root, int val = 0) {
-if (!root) return 0;//base condition
-//val = val << 1 | root->val; //Both are same it's just the bit manipulation way
-val = (val * 2 + root->val); //using Normal math
-return (root->left == root->right ? val : sumRootToLeaf(root->left, val) + sumRootToLeaf(root->right, val));
-}
-};
-```
-​
-**Python Final Code:-**
-```
-​
-```
-​
-**Time Complexity :** *`O(n)`*
-**Space Complexity:** *`O(1)`*
-***
-***
-**Not a pro in coding just doing it for the fun because I like it ;) , If I can improve anywhere please comment below or if you have any doubt feel free to ask.**
