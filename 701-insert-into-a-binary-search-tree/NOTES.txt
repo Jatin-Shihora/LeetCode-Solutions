@@ -1,3 +1,4 @@
 The solution is based on the property of bst :-
 1. The value which is lower than the parent node are always on the left.
 2. The value which is higher than the parent node are always on the right.
+3. The new node value is always inserted at the leaf of tree
