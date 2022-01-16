@@ -1,0 +1,14 @@
+**Simple explanation:**
+If the seats arrays starts or ends with an empty seat (i.e. starts or ends with 0 values), there is a chance that the seat with the largest distance from the next person be located at either ends. Otherwise the seat with the largest distance should be located between the indices corresponding to two consecutive 1s.
+​
+**Easy to understand algorithm:**
+​
+* Find the index of first encountered 1
+* Introduce 'last' variable and set its initial value to the index found in step 1)
+* Find the distance between to consecutive indices, divided by two.
+* Check if the first index calculated in 1), or the distance from the last encountered value for 'last' variable to the end of array is larger than the maximum value calculated in 3.
+​
+My easier solution
+​
+For first / last N 0s, the distance will be just N;
+For middle N 0s, distance = (N + 1) / 2;
