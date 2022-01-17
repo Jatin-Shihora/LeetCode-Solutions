@@ -1,0 +1,9 @@
+Key:
+​
+The key here is bijection, that is one-one and onto mapping. You can read about it here: https://en.wikipedia.org/wiki/Bijection.
+​
+The solution is simple: map a character in the pattern to a word in the string (in order) and map the same word to the same character. Throughout the loop over the string or pattern, ensure that there exists one and only one mapping between a character in pattern and a word in string (one-one) and each character is mapped to at least one word (onto). That's it!
+​
+​
+​
+https://leetcode.com/problems/word-pattern/discuss/1010245/C%2B%2B-Each-line-explained-solution-Faster-100
