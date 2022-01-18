@@ -2,6 +2,10 @@ class Solution {
 public:
     bool canPlaceFlowers(vector<int>& flowerbed, int n) {
         //Edge case 
+        /*Because than we are checking if there are three empty plots in a row, 
+        and in the case that the two first/last slots are empty we can place flowers there, 
+        but it doesn't answer the condition. So we have to add an empty plot to make it three.
+        */
         if(n==0) return true;
         if(flowerbed.size()==0) return false;
         if(flowerbed.size()==1) return flowerbed[0]==0;
