@@ -1,1 +1,6 @@
+if(isupper(word[1]) != isupper(word[i])) return false;
+This code checks if all are upper case AND check if all are lower case.
+You can also replace it by if(islower(word[1]) != islower(word[i])) return false;
 ​
+if( islower(word[0]) && isupper(word[i])) return false;
+Counter example of "Only the first letter in this word is capital, like "Google""
