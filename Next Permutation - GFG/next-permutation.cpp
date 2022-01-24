@@ -9,9 +9,23 @@ using namespace std;
 
 class Solution{
 public:
+    void reverse(vector<int> &a,int l,int r){
+        while(l<r)
+        swap(a[l++],a[r--]);               //swapping the first and last elements accordingly
+    }
     vector<int> nextPermutation(int n, vector<int> a){
         // code here
-        next_permutation(a.begin(),a.end());
+        int i=a.size()-2,j;
+        while((a[i]>=a[i+1])&&(i>=0))i--;
+        if(i<0){
+            reverse(a,0,n-1);
+            return a;
+        }
+        for(j=n-1;j>i;j--)
+        if(a[j]>a[i])break;//You can find this by using binary search but overall in worst case 
+                        //the program will run in O(n)
+        swap(a[i],a[j]);
+        reverse(a,i+1,n-1);
         return a;
     }
 };
