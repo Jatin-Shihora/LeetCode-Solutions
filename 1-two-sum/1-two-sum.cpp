@@ -1,6 +1,6 @@
 class Solution {
 public:
-    //One pass using unordered map, (a+b==target) , TC=O(n^2) and SC = O(n)
+    //One pass using unordered map, (a+b==target) , TC=O(n) and SC = O(n)
     vector<int> twoSum(vector<int>& nums, int target) {
         unordered_map<int,int> seen;
         for(int i=0;i<nums.size();++i){
