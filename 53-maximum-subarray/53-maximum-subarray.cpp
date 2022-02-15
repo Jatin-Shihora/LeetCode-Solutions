@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //Kadens Algo
     int maxSubArray(vector<int>& nums) {
         int sum = 0, maxi = INT_MIN;
         for(auto it: nums){
