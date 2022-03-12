@@ -11,6 +11,6 @@ public:
     void deleteNode(ListNode* node) {
         ListNode* temp = node->next;
         *node = *temp;
-        delete temp;
+        delete temp;//to FREE the node
     }
 };
