@@ -14,6 +14,7 @@ public:
             findCombination(ind,target-arr[ind],arr,ans,ds);
             ds.pop_back();
         }
+        //not pick up
         findCombination(ind+1,target,arr,ans,ds);
     }
     
