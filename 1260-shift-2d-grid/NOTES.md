@@ -1,0 +1,1 @@
+https://leetcode.com/problems/shift-2d-grid/discuss/1934961/C%2B%2B-Simple-Clean-Code-with-explanation
