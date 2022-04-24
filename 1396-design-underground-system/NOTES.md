@@ -1,0 +1,1 @@
+https://leetcode.com/problems/design-underground-system/discuss/554879/JavaC%2B%2B-HashMap-and-Pair-Clean-code-O(1)
