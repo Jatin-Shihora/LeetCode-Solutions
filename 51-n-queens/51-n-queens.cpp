@@ -4,7 +4,6 @@ void solve(vector<string> &chessBoard, vector<vector<string>> &ans, vector<int> 
         if(col == n){
             ans.push_back(chessBoard);
         }
-        
         for(int row = 0; row<n; row++){
             if(!lr[row] && !ud[n-1 + col - row] && !ld[row+col]){
                 chessBoard[row][col] = 'Q';
