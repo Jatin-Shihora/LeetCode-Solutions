@@ -1,2 +1,2 @@
-STRIVER
+STRIV
 ​
