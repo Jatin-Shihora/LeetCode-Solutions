@@ -1,3 +1,8 @@
+/*
+Time O(NlogN) for sorting,
+Time O(NSS) for the for loop, where the second S refers to the string generation and S <= 16.
+Space O(NS)
+*/
 class Solution {
 public:
     //comparator used for sorting the strings by thier length
