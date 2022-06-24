@@ -9,10 +9,8 @@ public:
         while (true) {
             a = pq.top(); pq.pop();
             total -= a;
-            if (a == 1 || total == 1)
-                return true;
-            if (a < total || total == 0 || a % total == 0)
-                return false;
+            if (a == 1 || total == 1) return true;
+            if (a < total || total == 0 || a % total == 0) return false;
             a %= total;
             total += a;
             pq.push(a);
