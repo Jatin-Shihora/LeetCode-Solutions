@@ -1,1 +1,1 @@
-Striver
+Striv
