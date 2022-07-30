@@ -11,13 +11,14 @@ public:
             }
         }
         
-        vector<string> res;
-        for (string a : A) {
+        vector<string> res; 
+        for(string a : A){
             tmp = counter(a);
-            for (i = 0; i < 26; ++i)
-                if (tmp[i] < count[i])
+            for(i=0;i<26;++i){
+                if(tmp[i] < count[i]) 
                     break;
-            if (i == 26) res.push_back(a);
+            }
+            if(i==26) res.push_back(a);
         }
         return res;
     }
