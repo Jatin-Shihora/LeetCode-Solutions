@@ -1,4 +1,4 @@
-Striver
+Striv
 ​
 **Intuition:-**
 After reading the question we get that we need to merge the over lapping intervals and return the result by keeping the rest of the elements as it is.
@@ -39,3 +39,16 @@ result.push_back(interval[i]);
 }
 }
 return result;
+}
+};
+```
+​
+**Code type 2:-**
+```
+class Solution {
+public:
+vector<vector<int>> merge(vector<vector<int>>& intervals) {
+//base case
+if(intervals.size()<=1) return intervals;
+//resultan vector
+vector<vector<int>> result;
