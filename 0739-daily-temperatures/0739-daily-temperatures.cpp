@@ -1,6 +1,5 @@
 class Solution {
 public:
-//Two pointer approach
     vector<int> dailyTemperatures(vector<int>& temperatures) {
         vector<int> warmer_temperature(temperatures.size());
         stack<int> st;//Monotonic stack
