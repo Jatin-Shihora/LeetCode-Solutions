@@ -1,13 +1,23 @@
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
-        vector<int> goal(26), cur(26), res;
-        for(char c : p) goal[c - 'a']++;
-        for(int i = 0; i < s.size(); i++) {
-            cur[s[i] - 'a']++;
-            if(i >= p.size()) cur[s[i - p.size()] - 'a']--;
-            if(cur == goal) res.push_back(i - p.size() + 1);
+        int m = s.size(), n=p.size(), i=0;
+        if(m<n) return {};
+        
+        vector<char> countP(256,0) , countW(256,0);
+        vector<int> ans;
+        
+        for(i; i<n; i++){
+            countP[p[i]]++;   
+            countW[s[i]]++;
         }
-        return res;
+        for(i ; i<m;i++){
+            if(countP == countW) ans.push_back(i-n);
+            countW[s[i]]++;
+            countW[s[(i-n)]]--;
+        }
+        if(countP == countW) ans.push_back(m-n);
+        
+        return ans;
     }
 };
