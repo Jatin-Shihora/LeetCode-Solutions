@@ -1,0 +1,1 @@
+https://leetcode.com/problems/shortest-path-with-alternating-colors/discuss/656384/C%2B%2B-BFS-with-explanation
