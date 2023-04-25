@@ -1,4 +1,5 @@
 class SmallestInfiniteSet {
+    //We use counter cur so we do not have to track all numbers in the set. We only use set to track added back numbers.
 public:
     int cur = 1;
     set<int> added; 
