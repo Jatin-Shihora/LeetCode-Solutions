@@ -1,0 +1,3 @@
+* To solve this problem, we can create two sets: set1 and set2. We can then iterate through nums1 and add each integer to set1. Similarly, we can iterate through nums2 and add each integer to set2.
+* Next, we can take the set difference between set1 and set2 to obtain the distinct integers in nums1 that are not present in nums2. Similarly, we can take the set difference between set2 and set1 to obtain the distinct integers in nums2 that are not present in nums1.
+* Finally, we can return the results in the form of a Vector of size 2, where the first element is the vector of distinct integers in nums1 that are not present in nums2, and the second element is the vector of distinct integers in nums2 that are not present in nums1.
