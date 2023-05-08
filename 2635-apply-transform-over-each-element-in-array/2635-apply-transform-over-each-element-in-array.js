@@ -4,8 +4,11 @@
  * @return {number[]}
  */
 var map = function(arr, fn) {
-  return arr.reduce((transformedArr, element, index) => {
+  const transformedArr = [];
+  let index = 0;
+  for (const element of arr) {
     transformedArr[index] = fn(element, index);
-    return transformedArr;
-  }, []);
+    index++;
+  }
+  return transformedArr;
 };
