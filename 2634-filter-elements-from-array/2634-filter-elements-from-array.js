@@ -4,11 +4,14 @@
  * @return {number[]}
  */
 var filter = function(arr, fn) {
-  const result = [];
-  arr.forEach((value, index) => {
+  return arr.map((value, index) => {
     if (fn(value, index)) {
+      return value;
+    }
+  }).reduce((result, value) => {
+    if (value !== undefined) {
       result.push(value);
     }
-  });
-  return result;
+    return result;
+  }, []);
 };
