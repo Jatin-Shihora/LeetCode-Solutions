@@ -2,19 +2,18 @@
  * @param {Function} fn
  */
 function memoize(fn) {
-  const cacheObject = {};
+  const cache = new Map();
   return function(...args) {
-    const key = JSON.stringify(args);
-    if (key in cacheObject) {
-      return cacheObject[key];
+    const key = args.map(a => typeof a + '|' + JSON.stringify(a)).join(',');
+    if (cache.has(key)) {
+      return cache.get(key);
     } else {
       const result = fn(...args);
-      cacheObject[key] = result;
+      cache.set(key, result);
       return result;
     }
   }
 }
-
 
 /** 
  * let callCount = 0;
