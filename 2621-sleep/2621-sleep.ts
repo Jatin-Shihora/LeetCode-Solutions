@@ -1,9 +1,12 @@
 async function sleep(millis: number): Promise<void> {
-    return new Promise<void>(delayresolve => {
-        setTimeout(delayresolve, millis);
-    });
+  return new Promise<void>((resolve, reject) => {
+    if (typeof millis !== 'number' || isNaN(millis)) {
+      reject(new Error('Invalid argument. Expected a number.'));
+    } else {
+      setTimeout(resolve, millis);
+    }
+  });
 }
-
 
 /** 
  * let t = Date.now()
