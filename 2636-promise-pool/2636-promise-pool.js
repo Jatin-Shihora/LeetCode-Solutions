@@ -25,6 +25,7 @@ var promisePool = async function(functions, n) {
 
   return results;
 };
+
 /**
  * const sleep = (t) => new Promise(res => setTimeout(res, t));
  * promisePool([() => sleep(500), () => sleep(400)], 1)
