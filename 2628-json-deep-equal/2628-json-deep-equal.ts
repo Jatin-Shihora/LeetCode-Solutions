@@ -1,9 +1,8 @@
 function helper(key: string, value: any): any {
-  if (value && typeof value === "object" && !Array.isArray(value)) {
+  if (value && typeof value === "object" && !Array.isArray(value)) 
     return Object.fromEntries(Object.entries(value).sort());
-  } else {
+   else
     return value;
-  }
 }
 
 function areDeeplyEqual(o1: any, o2: any): boolean {
