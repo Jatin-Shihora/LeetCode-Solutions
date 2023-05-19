@@ -4,24 +4,20 @@
  * @return {boolean}
  */
 var areDeeplyEqual = function(o1, o2) {
-  const isDeepEqual = (a, b) => {
-    if (a === b) return true;
+  if (o1 === o2) return true;
 
-    if (typeof a !== 'object' || typeof b !== 'object') return false;
+  if (typeof o1 !== 'object' || typeof o2 !== 'object') return false;
 
-    if (Array.isArray(a) !== Array.isArray(b)) return false;
+  if (Array.isArray(o1) !== Array.isArray(o2)) return false;
 
-    const keysA = Object.keys(a);
-    const keysB = Object.keys(b);
+  const keys1 = Object.keys(o1);
+  const keys2 = Object.keys(o2);
 
-    if (keysA.length !== keysB.length) return false;
+  if (keys1.length !== keys2.length) return false;
 
-    for (const key of keysA) {
-      if (!isDeepEqual(a[key], b[key])) return false;
-    }
+  for (const key of keys1) {
+    if (!areDeeplyEqual(o1[key], o2[key])) return false;
+  }
 
-    return true;
-  };
-
-  return isDeepEqual(o1, o2);
+  return true;
 };
