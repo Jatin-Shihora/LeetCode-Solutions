@@ -1,3 +1,8 @@
+/**
+ * @param {any} o1
+ * @param {any} o2
+ * @return {boolean}
+ */
 var areDeeplyEqual = function(o1, o2) {
     if (o1 === o2) return true;
     if (o1 === null || o2 === null) return false;
