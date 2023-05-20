@@ -1,13 +1,28 @@
-function helper(key: string, value: any): any {
-  if (value && typeof value === "object" && !Array.isArray(value)) 
-    return Object.fromEntries(Object.entries(value).sort());
-   else
-    return value;
-}
-
 function areDeeplyEqual(o1: any, o2: any): boolean {
-  const stringifiedO1 = JSON.stringify(o1, helper);
-  const stringifiedO2 = JSON.stringify(o2, helper);
+  const objs: [any, any][] = [[o1, o2]];
 
-  return stringifiedO1 === stringifiedO2;
+  while (objs.length) {
+    [o1, o2] = objs.pop()!;
+
+    if (o1 === o2) continue;
+    if (typeof o1 !== 'object' || typeof o2 !== 'object') return false;
+    if (Array.isArray(o1) !== Array.isArray(o2)) return false;
+
+    const keys1 = Object.keys(o1);
+    const keys2 = Object.keys(o2);
+
+    if (keys1.length !== keys2.length) return false;
+    for (const key of keys1) {
+      if (!(key in o2)) return false;
+      objs.push([o1[key], o2[key]]);
+    }
+  }
+
+  return true;
 }
+
+
+
+
+
+
