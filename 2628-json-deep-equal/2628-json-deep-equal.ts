@@ -1,7 +1,7 @@
 function areDeeplyEqual(o1: any, o2: any): boolean {
     if (o1 === o2) return true;
     if (o1 === null || o2 === null) return false;
-    if (Object.prototype.toString.call(o1) !== Object.prototype.toString.call(o2)) return false;
+    if (String(o1) !== String(o2)) return false;
 
     if (typeof o1 !== 'object') {
         return o1 === o2;
