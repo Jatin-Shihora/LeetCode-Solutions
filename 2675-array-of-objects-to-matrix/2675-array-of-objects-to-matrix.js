@@ -1,33 +1,54 @@
-const flattenObject = (element, path, object, columns) => {
-  if (element !== null && typeof element === 'object') {
-    Object.entries(element).forEach(([key, value]) =>
-      flattenObject(value, path + (path ? '.' : '') + key, object, columns)
-    );
-  } else {
-    object[path] = element;
-    columns.add(path);
-  }
-  return object;
-};
-
 var jsonToMatrix = function(arr) {
-  const matrix = [];
-  const columns = new Set();
+  const columnMap = new Map();
+  const result = [[]];
 
-  arr = arr.map((element) => flattenObject(element, '', {}, columns));
-  matrix.push([...columns].sort());
+  const sortColumns = (matrix) => {
+    const sortedColumnNames = matrix[0].sort((a, b) => a.localeCompare(b));
+    const copyMatrix = [[]];
+    for (let i = 1; i < matrix.length; i++) {
+      copyMatrix[i] = matrix[i].slice();
+    }
 
-  const columnsIndex = matrix[0].reduce((acc, cur, idx) => {
-    acc[cur] = idx;
-    return acc;
-  }, {});
+    for (let i = 0; i < matrix[0].length; i++) {
+      const oldColumn = columnMap.get(sortedColumnNames[i]);
+      if (oldColumn === i) {
+        continue;
+      }
+      for (let j = 1; j < matrix.length; j++) {
+        matrix[j][i] = copyMatrix[j][oldColumn];
+      }
+    }
+    return matrix;
+  };
 
-  arr.forEach((element) => {
-    matrix.push(Array(columns.size).fill(''));
-    Object.entries(element).forEach(([key, value]) => {
-      matrix.at(-1)[columnsIndex[key]] = value;
-    });
-  });
+  for (let i = 0; i < arr.length; i++) {
+    const stack = [[arr[i], []]];
+    result.push(Array(columnMap.size).fill(''));
+    while (stack.length > 0) {
+      const [front, path] = stack.pop();
+      if (typeof front === 'object' && front !== null) {
+        const keys = Object.keys(front);
+        for (let j = keys.length - 1; j >= 0; j--) {
+          stack.push([front[keys[j]], path.concat(keys[j])]);
+        }
+      } else if (Array.isArray(front)) {
+        for (let j = front.length - 1; j >= 0; j--) {
+          stack.push([front[j], path.concat(j)]);
+        }
+      } else {
+        const pathStr = path.join('.');
+        if (!columnMap.has(pathStr)) {
+          result[0].push(pathStr);
+          columnMap.set(pathStr, result[0].length - 1);
+          for (let j = 1; j < result.length; j++) {
+            result[j][result[0].length - 1] = '';
+          }
+        }
+        const j = columnMap.get(pathStr);
+        result[i + 1][j] = front;
+      }
+    }
+  }
 
-  return matrix;
+  return sortColumns(result);
 };
