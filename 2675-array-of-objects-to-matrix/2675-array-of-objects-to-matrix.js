@@ -1,9 +1,5 @@
-/**
- * @param {Array} arr
- * @return {Matrix}
- */
-var jsonToMatrix = function(arr) {
-      const isObject = elem => elem instanceof Object
+var jsonToMatrix = function (arr) {
+  const isObject = elem => elem instanceof Object
 
   const getSub = (obj) => {
     const map = new Map()
