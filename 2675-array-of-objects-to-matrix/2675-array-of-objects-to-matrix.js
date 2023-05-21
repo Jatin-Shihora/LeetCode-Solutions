@@ -2,33 +2,36 @@
  * @param {Array} arr
  * @return {Matrix}
  */
-const flattenBacktracking = (ele, path, object, columns) => {
-  if (ele != null && typeof ele == "object") {
-    Object.entries(ele).forEach(([key, value]) =>
-      flattenBacktracking(value, path + (path ? "." : "") + key, object, columns)
-    )
-  } else {
-    object[path] = ele
-    columns.add(path)
-  }
-  return object
-}
-
 var jsonToMatrix = function (arr) {
-  const matrix = []
-  const columns = new Set()
+  const isObject = x => (x !== null && typeof x === 'object')
 
-  arr = arr.map((ele) => flattenBacktracking(ele, "", {}, columns))
-  matrix.push([...columns].sort())
+  const getKeys = (arg) => {
+    if (!isObject(arg)) return ['']
+    return Object.keys(arg).reduce((acc, curr) => {
+      return (acc.push(...getKeys(arg[curr]).map(x => x ? `${curr}.${x}` : curr)), acc)
+    }, [])
+  }
 
-  const columnsIdx = matrix[0].reduce(
-    (acc, cur, idx) => ((acc[cur] = idx), acc),
-    {}
-  )
+  const keys = [...arr.reduce((acc, curr) => {
+    getKeys(curr).forEach((k) => acc.add(k))
+    return acc
+  }, new Set())].sort()
 
-  arr.forEach((ele) => {
-    matrix.push(Array(columns.size).fill(""))
-    Object.entries(ele).forEach(([key, value]) => (matrix.at(-1)[columnsIdx[key]] = value))
+  const getValue = (obj, path) => {
+    const paths = path.split('.')
+    let i = 0;
+    let value = obj
+    while (i < paths.length) {
+      if (!isObject(value)) break;
+      value = value[paths[i++]]
+    }
+    if (i < paths.length || isObject(value) || value === undefined) return ''
+    return value
+  }
+
+  const matrix = [keys]
+  arr.forEach(obj => {
+    matrix.push(keys.map(key => getValue(obj, key)))
   })
 
   return matrix
