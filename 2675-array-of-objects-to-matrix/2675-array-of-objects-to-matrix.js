@@ -2,67 +2,33 @@
  * @param {Array} arr
  * @return {Matrix}
  */
+const flattenBacktracking = (ele, path, object, columns) => {
+  if (ele != null && typeof ele == "object") {
+    Object.entries(ele).forEach(([key, value]) =>
+      flattenBacktracking(value, path + (path ? "." : "") + key, object, columns)
+    )
+  } else {
+    object[path] = ele
+    columns.add(path)
+  }
+  return object
+}
 var jsonToMatrix = function (arr) {
-  const colMap = new Map()
-  const res = [[]]
+  const matrix = []
+  const columns = new Set()
 
-  const sortCols = (matrix) => {
-    const sortedColNames = matrix[0].sort((a, b) => a.localeCompare(b))
-    const copyMatrix = [[]]
+  arr = arr.map((ele) => flattenBacktracking(ele, "", {}, columns))
+  matrix.push([...columns].sort())
 
-    for (let i = 1; i < matrix.length; i++) {
-      copyMatrix[i] = matrix[i].slice()
-    }
+  const columnsIdx = matrix[0].reduce(
+    (acc, cur, idx) => ((acc[cur] = idx), acc),
+    {}
+  )
 
-    for (let i = 0; i < matrix[0].length; i++) {
-      let oldCol = colMap.get(sortedColNames[i])
+  arr.forEach((ele) => {
+    matrix.push(Array(columns.size).fill(""))
+    Object.entries(ele).forEach(([key, value]) => (matrix.at(-1)[columnsIdx[key]] = value))
+  })
 
-      if (oldCol === i) {
-        continue
-      }
-
-      for (let j = 1; j < matrix.length; j++) {
-        matrix[j][i] = copyMatrix[j][oldCol]
-      }
-    }
-
-    return matrix
-  }
-
-  for (let i = 0; i < arr.length; i++) {
-    const stack = [[arr[i], []]]
-    res.push(Array(colMap.size).fill(""))
-
-    while (stack.length > 0) {
-      const [front, path] = stack.pop()
-
-      if (typeof front === "object" && front !== null) {
-        const keys = Object.keys(front)
-
-        for (let j = keys.length - 1; j >= 0; j--) {
-          stack.push([front[keys[j]], path.concat(keys[j])])
-        }
-      } else if (Array.isArray(front)) {
-        for (let j = front.length - 1; j >= 0; j--) {
-          stack.push([front[j], path.concat(j)])
-        }
-      } else {
-        let pathStr = path.join('.')
-
-        if (!colMap.has(pathStr)) {
-          res[0].push(pathStr)
-          colMap.set(pathStr, res[0].length - 1)
-
-          for (let j = 1; j < res.length; j++) {
-            res[j][res[0].length - 1] = ""
-          }
-        }
-
-        let j = colMap.get(pathStr)
-        res[i + 1][j] = front
-      }
-    }
-  }
-
-  return sortCols(res)
+  return matrix
 };
