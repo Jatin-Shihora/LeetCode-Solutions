@@ -3,64 +3,66 @@
  * @return {Matrix}
  */
 var jsonToMatrix = function (arr) {
-  const isObject = elem => elem instanceof Object
+  const colMap = new Map()
+  const res = [[]]
 
-  const getSub = (obj) => {
-    const map = new Map()
+  const sortCols = (matrix) => {
+    const sortedColNames = matrix[0].sort((a, b) => a.localeCompare(b))
+    const copyMatrix = [[]]
 
-    const setMap = (elem, preKey) => {
-      if (!isObject(elem)) {
-        map.set(preKey, elem)
-        return
+    for (let i = 1; i < matrix.length; i++) {
+      copyMatrix[i] = matrix[i].slice()
+    }
+
+    for (let i = 0; i < matrix[0].length; i++) {
+      let oldCol = colMap.get(sortedColNames[i])
+
+      if (oldCol === i) {
+        continue
       }
 
-      const subMap = getSub(elem)
-      for (const entry of subMap.entries()) {
-        const symbol = `${preKey}.${entry[0]}`
-        map.set(symbol, entry[1])
+      for (let j = 1; j < matrix.length; j++) {
+        matrix[j][i] = copyMatrix[j][oldCol]
       }
     }
 
-    if (Array.isArray(obj)) {
-      for (let i = 0; i < obj.length; i++) {
-        setMap(obj[i], `${i}`)
-      }
-    } else {
-      for (const key of Object.keys(obj)) {
-        setMap(obj[key], key)
-      }
-    }
-
-    return map
+    return matrix
   }
 
-  const map = getSub(arr)
-  const set = new Set()
+  for (let i = 0; i < arr.length; i++) {
+    const stack = [[arr[i], []]]
+    res.push(Array(colMap.size).fill(""))
 
-  for (const key of map.keys()) {
-    const i = key.indexOf('.')
-    const symbol = key.slice(i + 1)
-    set.add(symbol)
-  }
+    while (stack.length > 0) {
+      const [front, path] = stack.pop()
 
-  const keys = [...set].sort((a, b) => a < b ? -1 : 1)
-  const len = arr.length
-  const matrix = [keys]
+      if (typeof front === "object" && front !== null) {
+        const keys = Object.keys(front)
 
-  for (let i = 1; i <= len; i++) {
-    if (keys.length === 0) {
-      matrix[i] = []
-      continue
-    }
+        for (let j = keys.length - 1; j >= 0; j--) {
+          stack.push([front[keys[j]], path.concat(keys[j])])
+        }
+      } else if (Array.isArray(front)) {
+        for (let j = front.length - 1; j >= 0; j--) {
+          stack.push([front[j], path.concat(j)])
+        }
+      } else {
+        let pathStr = path.join('.')
 
-    for (let j = 0; j < keys.length; j++) {
-      const key = `${i - 1}.${keys[j]}`
-      if (!matrix[i]) {
-        matrix[i] = []
+        if (!colMap.has(pathStr)) {
+          res[0].push(pathStr)
+          colMap.set(pathStr, res[0].length - 1)
+
+          for (let j = 1; j < res.length; j++) {
+            res[j][res[0].length - 1] = ""
+          }
+        }
+
+        let j = colMap.get(pathStr)
+        res[i + 1][j] = front
       }
-      matrix[i][j] = map.has(key) ? map.get(key) : ""
     }
   }
 
-  return matrix
+  return sortCols(res)
 };
