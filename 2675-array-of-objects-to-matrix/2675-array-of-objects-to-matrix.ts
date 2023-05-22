@@ -1,34 +1,62 @@
 function jsonToMatrix(arr: any[]): (string | number | boolean | null)[][] {
-  const isObject = (x: any): x is object => (x !== null && typeof x === 'object');
+  const isObject = (elem: any): boolean => elem instanceof Object;
 
-  const getKeys = (arg: any): string[] => {
-    if (!isObject(arg)) return [''];
-    return Object.keys(arg).reduce((acc: string[], curr: string) => {
-      return (acc.push(...getKeys(arg[curr]).map((x: string) => x ? `${curr}.${x}` : curr)), acc);
-    }, []);
-  };
+  const getSub = (obj: any): Map<string, any> => {
+    const map = new Map<string, any>();
 
-  const keys: string[] = [...arr.reduce((acc: Set<string>, curr: any) => {
-    getKeys(curr).forEach((k: string) => acc.add(k));
-    return acc;
-  }, new Set<string>())].sort();
+    const setMap = (elem: any, preKey: string) => {
+      if (!isObject(elem)) {
+        map.set(preKey, elem);
+        return;
+      }
 
-  const getValue = (obj: any, path: string): string | number | boolean | null => {
-    const paths: string[] = path.split('.');
-    let i = 0;
-    let value: any = obj;
-    while (i < paths.length) {
-      if (!isObject(value)) break;
-      value = value[paths[i++]];
+      const subMap = getSub(elem);
+      for (const entry of subMap.entries()) {
+        const symbol = `${preKey}.${entry[0]}`;
+        map.set(symbol, entry[1]);
+      }
+    };
+
+    if (Array.isArray(obj)) {
+      for (let i = 0; i < obj.length; i++) {
+        setMap(obj[i], `${i}`);
+      }
+    } else {
+      for (const key of Object.keys(obj)) {
+        setMap(obj[key], key);
+      }
     }
-    if (i < paths.length || isObject(value) || value === undefined) return '';
-    return value;
+
+    return map;
   };
 
+  const map = getSub(arr);
+  const set = new Set<string>();
+
+  for (const key of map.keys()) {
+    const i = key.indexOf('.');
+    const symbol = key.slice(i + 1);
+    set.add(symbol);
+  }
+
+  const keys = [...set].sort((a, b) => a < b ? -1 : 1);
+  const len = arr.length;
   const matrix: (string | number | boolean | null)[][] = [keys];
-  arr.forEach((obj: any) => {
-    matrix.push(keys.map((key: string) => getValue(obj, key)));
-  });
+
+  for (let i = 1; i <= len; i++) {
+    if (keys.length === 0) {
+      matrix[i] = [];
+      continue;
+    }
+
+    for (let j = 0; j < keys.length; j++) {
+      const key = `${i - 1}.${keys[j]}`;
+      if (!matrix[i]) {
+        matrix[i] = [];
+      }
+      matrix[i][j] = map.has(key) ? map.get(key) : "";
+    }
+  }
 
   return matrix;
 }
