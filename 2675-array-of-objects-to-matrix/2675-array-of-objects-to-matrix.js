@@ -1,3 +1,7 @@
+/**
+ * @param {Array} arr
+ * @return {Matrix}
+ */
 var jsonToMatrix = function (arr) {
   const isObject = x => (x !== null && typeof x === 'object')
 
