@@ -14,10 +14,12 @@ var jsonToMatrix = function (arr) {
     return result;
   }
 
-  const keys = [...arr.reduce((acc, curr) => {
-    getKeys(curr).forEach((k) => acc.add(k))
-    return acc
-  }, new Set())].sort()
+  const keysSet = arr.reduce((acc, curr) => {
+  getKeys(curr).forEach((k) => acc.add(k));
+  return acc;
+  }, new Set());
+
+  const keys = Array.from(keysSet).sort();
 
   const getValue = (obj, path) => {
     const paths = path.split('.')
