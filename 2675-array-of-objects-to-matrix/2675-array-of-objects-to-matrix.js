@@ -2,28 +2,22 @@ var jsonToMatrix = function (arr) {
   const colMap = new Map()
   const res = [[]]
 
-  const sortCols = (matrix) => {
-    const sortedColNames = matrix[0].sort((a, b) => a.localeCompare(b))
-    const copyMatrix = [[]]
+    const sortCols = (matrix) => {
+      // Copy the column names from the first row of the matrix and sort them using localeCompare
+      const sortedColNames = matrix[0].slice().sort((a, b) => a.localeCompare(b));
 
-    for (let i = 1; i < matrix.length; i++) {
-      copyMatrix[i] = matrix[i].slice()
-    }
+      // Create a new sorted matrix based on the sorted column names
+      const sortedMatrix = matrix.map((row) => {
+        const sortedRow = [];
+        for (let i = 0; i < sortedColNames.length; i++) {
+          const colIndex = matrix[0].indexOf(sortedColNames[i]);
+          sortedRow.push(row[colIndex]);
+        }
+        return sortedRow;
+      });
 
-    for (let i = 0; i < matrix[0].length; i++) {
-      let oldCol = colMap.get(sortedColNames[i])
-
-      if (oldCol === i) {
-        continue
-      }
-
-      for (let j = 1; j < matrix.length; j++) {
-        matrix[j][i] = copyMatrix[j][oldCol]
-      }
-    }
-
-    return matrix
-  }
+      return sortedMatrix;
+    };
 
   for (let i = 0; i < arr.length; i++) {
     const stack = [[arr[i], []]]
