@@ -8,15 +8,8 @@ var chunk = function(arr, size) {
   let index = 0;
   
   while (index < arr.length) {
-    let count = size;
-    const temp = [];
-    
-    while (count-- > 0 && index < arr.length) {
-      temp.push(arr[index]);
-      index++;
-    }
-    
-    chunkedArray.push(temp);
+    chunkedArray.push(arr.slice(index, index + size));
+    index += size;
   }
   
   return chunkedArray;
