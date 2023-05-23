@@ -4,13 +4,19 @@
  * @return {Array[]}
  */
 var chunk = function(arr, size) {
-  const chunkedArray = [];
-  let index = 0;
+  let chunkedArray = [[]];
+  let temp = [];
   
-  while (index < arr.length) {
-    chunkedArray.push(arr.slice(index, index + size));
-    index += size;
+  for (let i = 0; i < arr.length; i = i + size) {
+    for (let j = 0; j < size; j++) {
+      temp[j] = arr[j + i];
+      if (j + i === arr.length) {
+        temp.splice(j);
+        break;
+      }
+    }
+    chunkedArray = [...chunkedArray, [...temp]];
   }
   
-  return chunkedArray;
+  return chunkedArray.slice(1);
 };
