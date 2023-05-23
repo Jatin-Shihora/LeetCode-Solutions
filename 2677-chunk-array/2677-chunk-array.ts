@@ -4,13 +4,17 @@
  * @return {Array[]}
  */
 function chunk(arr: any[], size: number): any[][] {
-  return arr.reduce((chunkedArray: any[][], element: any) => {
-    const lastChunk = chunkedArray[chunkedArray.length - 1];
-    if (!lastChunk || lastChunk.length === size) {
-      chunkedArray.push([element]);
-    } else {
-      lastChunk.push(element);
+  const result: any[][] = [];
+  let currentChunk: any[] = [];
+
+  for (const element of arr) {
+    if (currentChunk.length === size) {
+      result.push(currentChunk);
+      currentChunk = [];
     }
-    return chunkedArray;
-  }, []);
+    currentChunk.push(element);
+  }
+
+  if (currentChunk.length) result.push(currentChunk);
+  return result;
 }
