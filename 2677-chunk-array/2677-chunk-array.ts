@@ -4,17 +4,7 @@
  * @return {Array[]}
  */
 function chunk(arr: any[], size: number): any[][] {
-  const result: any[][] = [];
-  let currentChunk: any[] = [];
-
-  for (const element of arr) {
-    if (currentChunk.length === size) {
-      result.push(currentChunk);
-      currentChunk = [];
-    }
-    currentChunk.push(element);
-  }
-
-  if (currentChunk.length) result.push(currentChunk);
-  return result;
+  return Array.from({ length: Math.ceil(arr.length / size) }, function(_: any, index: number) {
+    return arr.slice(index * size, index * size + size);
+  });
 }
