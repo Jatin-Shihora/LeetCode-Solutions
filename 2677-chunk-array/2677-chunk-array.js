@@ -4,8 +4,18 @@
  * @return {Array[]}
  */
 var chunk = function(arr, size) {
-  return Array.from({ length: Math.ceil(arr.length / size) }, function(_, index) {
-    return arr.slice(index * size, index * size + size);
-  });
+  const result = [];
+  let currentChunk = [];
+
+  for (const element of arr) {
+    if (currentChunk.length === size) {
+      result.push(currentChunk);
+      currentChunk = [];
+    }
+    currentChunk.push(element);
+  }
+
+  if (currentChunk.length) result.push(currentChunk);
+  return result;
 };
 
