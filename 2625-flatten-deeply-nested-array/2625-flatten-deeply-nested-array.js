@@ -4,17 +4,25 @@
  * @return {any[]}
  */
 var flat = function (arr, n) {
-    let res = [];
-    const flattening = (nums, l) => {
-      for (const num of nums) {
-        if (Array.isArray(num) && l > 0 && l <= n) {
-          flattening(num, l - 1);
-        } else {
-          res.push(num);
-        }
-      }
-    }
+    let unboxed = true;
+    let queue;
+    let depth = 0;
 
-    flattening(arr, n);
-    return res;
+    while(unboxed && depth < n) {
+        unboxed = false;
+        queue = [];
+
+        for(let i = 0; i < arr.length; i++) {
+            if(Array.isArray(arr[i])) {
+                queue.push(...arr[i]);
+                unboxed = true;
+            } else {
+                queue.push(arr[i]);
+            }
+        }
+        arr = [...queue];
+        depth++;
+    }
+    
+    return arr;
 };
