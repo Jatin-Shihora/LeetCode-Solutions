@@ -4,25 +4,18 @@
  * @return {any[]}
  */
 var flat = function (arr, n) {
-    let unboxed = true;
-    let queue;
-    let depth = 0;
+	const stack = [...arr.map((item) => [item, n])];
+	const flatArray = [];
+	
+	while (stack.length > 0) {
+		const [item, depth] = stack.pop();
+		if (Array.isArray(item) && depth > 0) {
+			// push back with depth - 1
+			stack.push(...item.map((el) => [el, depth - 1]));
+		} else {
+			flatArray.push(item);
+		}
+	}
 
-    while(unboxed && depth < n) {
-        unboxed = false;
-        queue = [];
-
-        for(let i = 0; i < arr.length; i++) {
-            if(Array.isArray(arr[i])) {
-                queue.push(...arr[i]);
-                unboxed = true;
-            } else {
-                queue.push(arr[i]);
-            }
-        }
-        arr = [...queue];
-        depth++;
-    }
-    
-    return arr;
+	return flatArray.reverse();
 };
