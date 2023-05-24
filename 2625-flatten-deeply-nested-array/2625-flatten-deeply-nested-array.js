@@ -5,16 +5,16 @@
  */
 var flat = function (arr, n) {
     let res = [];
-    const flatten = (nums, l) => {
+    const flattening = (nums, l) => {
       for (const num of nums) {
         if (Array.isArray(num) && l > 0 && l <= n) {
-          flatten(num, l - 1);
+          flattening(num, l - 1);
         } else {
           res.push(num);
         }
       }
     }
 
-    flatten(arr, n);
+    flattening(arr, n);
     return res;
 };
