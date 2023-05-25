@@ -4,18 +4,24 @@
  * @return {any[]}
  */
 var flat = function (arr, n) {
-	const stack = [...arr.map((item) => [item, n])];
-	const res = [];
-	
-	while (stack.length > 0) {
-		const [item, depth] = stack.pop();
-		if (Array.isArray(item) && depth > 0) {
-			// push back with depth - 1
-			stack.push(...item.map((el) => [el, depth - 1]));
-		} else {
-			res.push(item);
-		}
-	}
+    let nested_array_element = true;
+    let depth = 0;
 
-	return res.reverse();
+    while(nested_array_element && depth < n) {
+        nested_array_element = false;
+        queue = [];
+
+        for(let i = 0; i < arr.length; i++) {
+            if(Array.isArray(arr[i])) {
+                queue.push(...arr[i]);
+                nested_array_element = true;
+            } else {
+                queue.push(arr[i]);
+            }
+        }
+        arr = [...queue];
+        depth++;
+    }
+    
+    return arr;
 };
