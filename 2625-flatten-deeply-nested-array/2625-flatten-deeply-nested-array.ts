@@ -1,25 +1,18 @@
 type MultiDimensionalArray = (number | MultiDimensionalArray)[];
 
 const flat = function (arr: MultiDimensionalArray, n: number): MultiDimensionalArray {
-    let nestedArrayElement = true;
-    let queue: MultiDimensionalArray;
-    let depth = 0;
+    let res: MultiDimensionalArray = [];
 
-    while (nestedArrayElement && depth < n) {
-        nestedArrayElement = false;
-        queue = [];
-
-        for (let i = 0; i < arr.length; i++) {
-            if (Array.isArray(arr[i])) {
-                queue.push(...arr[i] as MultiDimensionalArray);
-                nestedArrayElement = true;
+    const flattening = (nums: MultiDimensionalArray, l: number) => {
+        for (const num of nums) {
+            if (Array.isArray(num) && l > 0 && l <= n) {
+                flattening(num as MultiDimensionalArray, l - 1);
             } else {
-                queue.push(arr[i]);
+                res.push(num);
             }
         }
-        arr = [...queue];
-        depth++;
-    }
+    };
 
-    return arr;
+    flattening(arr, n);
+    return res;
 };
