@@ -1,17 +1,25 @@
 type MultiDimensionalArray = (number | MultiDimensionalArray)[];
 
 const flat = function (arr: MultiDimensionalArray, n: number): MultiDimensionalArray {
-    const stack: [MultiDimensionalArray, number][] = arr.map((item) => [item, n] as [MultiDimensionalArray, number]);
-    const res: MultiDimensionalArray = [];
+    let nestedArrayElement = true;
+    let queue: MultiDimensionalArray;
+    let depth = 0;
 
-    while (stack.length > 0) {
-        const [item, depth] = stack.pop()!;
-        if (Array.isArray(item) && depth > 0) {
-            stack.push(...item.map((el) => [el, depth - 1] as [MultiDimensionalArray, number]));
-        } else {
-            res.push(item);
+    while (nestedArrayElement && depth < n) {
+        nestedArrayElement = false;
+        queue = [];
+
+        for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                queue.push(...arr[i] as MultiDimensionalArray);
+                nestedArrayElement = true;
+            } else {
+                queue.push(arr[i]);
+            }
         }
+        arr = [...queue];
+        depth++;
     }
 
-    return res.reverse();
+    return arr;
 };
