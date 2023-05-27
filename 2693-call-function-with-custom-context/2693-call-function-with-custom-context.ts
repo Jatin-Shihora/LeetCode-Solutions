@@ -8,8 +8,6 @@ Function.prototype.callPolyfill = function(context: Record<string, any>, ...args
   Object.defineProperty(context, '__callPolyfill__', {
     value: this,
     enumerable: false,
-    writable: true,
-    configurable: true
   });
 
   const result = context['__callPolyfill__'](...args);
