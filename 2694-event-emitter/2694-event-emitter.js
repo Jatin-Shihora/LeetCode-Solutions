@@ -1,38 +1,24 @@
 class EventEmitter {
-  constructor() {
-    this.events = {};
-  }
-
-  subscribe(event, cb) {
-    if (!(event in this.events)) {
-      this.events[event] = [];
+    constructor() {
+        this.store = {};
     }
 
-    this.events[event].push(cb);
+    subscribe(event, cb) {
+        if (this.store[event] === undefined) this.store[event] = [];
+        this.store[event].push(cb);
 
-    return {
-      unsubscribe: () => {
-        const index = this.events[event].indexOf(cb);
-        if (index !== -1) {
-          this.events[event].splice(index, 1);
-        }
-      }
-    };
-  }
-
-  emit(event, args = []) {
-    if (!(event in this.events)) {
-      return [];
+        return {
+            unsubscribe: () => {
+                this.store[event] = this.store[event].filter(fn => fn !== cb);
+            }
+        };
     }
 
-    const results = [];
-    for (const cb of this.events[event]) {
-      results.push(cb(...args));
+    emit(event, args = []) {
+        return (this.store[event] || []).map(fn => fn(...args));
     }
-
-    return results;
-  }
 }
+
 
 /**
  * const emitter = new EventEmitter();
