@@ -1,23 +1,38 @@
 type Callback = (...args: any[]) => any;
 type Subscription = {
-    unsubscribe: () => void
-}
+  unsubscribe: () => void;
+};
 
 class EventEmitter {
-    store = {};
-    subscribe(event: string, cb: Callback): Subscription {
-        // first time we had a callback for event
-        if (this.store[event] === undefined) this.store[event] = [cb];
-        // every other time
-        else this.store[event].push(cb);
-        return {
-            unsubscribe: () => {
-                this.store[event] = this.store[event].filter(fn => fn !== cb);
-            }
-        };
+  private events: { [event: string]: Set<Callback> };
+
+  constructor() {
+    this.events = {};
+  }
+
+  subscribe(event: string, callback: Callback): Subscription {
+    if (!Object.hasOwnProperty.call(this.events, event)) {
+      this.events[event] = new Set();
+    }
+    this.events[event].add(callback);
+
+    return {
+      unsubscribe: () => {
+        this.events[event].delete(callback);
+      },
+    };
+  }
+
+  emit(event: string, args: any[] = []): any[] {
+    if (!Object.hasOwnProperty.call(this.events, event)) {
+      return [];
     }
 
-    emit(event: string, args: any[] = []): any {
-        return (this.store[event] || []).map(fn => fn(...args));
-    }
+    const result: any[] = [];
+    this.events[event].forEach((fn) => {
+      result.push(fn(...args));
+    });
+
+    return result;
+  }
 }
