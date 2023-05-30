@@ -4,25 +4,35 @@ type Subscription = {
 };
 
 class EventEmitter {
-  private events: { [event: string]: Callback[] };
+  private events: { [event: string]: Set<Callback> };
 
   constructor() {
     this.events = {};
   }
 
-  subscribe(event: string, cb: Callback): Subscription {
-    this.events[event] = this.events[event] ?? [];
-    this.events[event].push(cb);
+  subscribe(event: string, callback: Callback): Subscription {
+    if (!(event in this.events)) {
+      this.events[event] = new Set();
+    }
+    this.events[event].add(callback);
 
     return {
       unsubscribe: () => {
-        this.events[event].pop();
+        this.events[event].delete(callback);
       },
     };
   }
 
   emit(event: string, args: any[] = []): any[] {
-    if (!this.events[event]) return [];
-    return this.events[event].map((f) => f(...args));
+    if (!(event in this.events)) {
+      return [];
+    }
+
+    const result: any[] = [];
+    this.events[event].forEach((fn) => {
+      result.push(fn(...args));
+    });
+
+    return result;
   }
 }
