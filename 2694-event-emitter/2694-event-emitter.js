@@ -1,32 +1,24 @@
 class EventEmitter {
-  constructor() {
-    this.events = {};
-  }
-
-  subscribe(event, cb) {
-    if (!(event in this.events)) {
-      this.events[event] = new Set([cb]);
-    } else {
-      this.events[event].add(cb);
+    constructor() {
+        this.events = {};
     }
 
-    return {
-      unsubscribe: () => {
-        this.events[event].delete(cb);
-      },
-    };
-  }
+    subscribe(event, cb) {
+        // If no handlers for current event - initialize an empty list
+        this.events[event] = this.events[event] ?? [];
+        this.events[event].push(cb);
 
-  emit(event, args = []) {
-    if (!(event in this.events)) return [];
-    const result = [];
-    this.events[event].forEach((fn) => {
-      result.push(fn(...args));
-    });
-    return result;
-  }
+        return {
+            unsubscribe: () => this.events[event].pop(),
+        };
+        if (this.events[event].length=== 0) { delete this.events[event] }
+    }
+
+    emit(event, args = []) {
+        if (!this.events[event]) return [];
+        return this.events[event].map(f => f(...args));
+    }
 }
-
 /**
  * const emitter = new EventEmitter();
  *
