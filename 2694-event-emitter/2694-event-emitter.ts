@@ -24,7 +24,7 @@ class EventEmitter {
   }
 
   emit(event: string, args: any[] = []): any[] {
-    if (!this.events[event]) return [];
+    if (!(event in this.events)) return [];
     return this.events[event].map((f) => f(...args));
   }
 }
