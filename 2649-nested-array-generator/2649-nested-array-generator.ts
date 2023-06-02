@@ -4,15 +4,21 @@ function* inorderTraversal(arr: MultidimensionalArray): Generator<number, void, 
   if (arr.length === 0) {
     return null;
   }
-  for (let i = 0; i < arr.length; i++) {
-    let element = arr[i];
-    if (Array.isArray(element)) {
-      yield* inorderTraversal(element);
+
+  const stack: MultidimensionalArray[] = [arr];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    if (Array.isArray(current)) {
+      for (let i = current.length - 1; i >= 0; i--) {
+        stack.push(current[i] as MultidimensionalArray); // Type assertion added here
+      }
     } else {
-      yield element;
+      yield current as number;
     }
   }
 }
+
+
 
 
 /**
