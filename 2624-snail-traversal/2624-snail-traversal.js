@@ -1,13 +1,8 @@
-/**
- * @param {number} rowsCount
- * @param {number} colsCount
- * @return {Array<Array<number>>}
- */
 Array.prototype.snail = function(rowsCount, colsCount) {
     // base case: wrong inputs
     if (rowsCount * colsCount !== this.length) return [];
     // support variables
-    const res = Array.from({length: rowsCount}, () => Array.from({length: colsCount}));
+    let res = Array(rowsCount).fill().map(() => []);
     let goingDown = true, x = 0, y = 0;
     // populating res
     for (const n of this) {
@@ -33,9 +28,3 @@ Array.prototype.snail = function(rowsCount, colsCount) {
     }
     return res;
 };
-
-
-/**
- * const arr = [1,2,3,4];
- * arr.snail(1,4); // [[1,2,3,4]]
- */
