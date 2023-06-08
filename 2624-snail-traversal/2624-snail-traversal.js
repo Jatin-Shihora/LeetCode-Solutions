@@ -4,19 +4,36 @@
  * @return {Array<Array<number>>}
  */
 Array.prototype.snail = function(rowsCount, colsCount) {
-  if (rowsCount * colsCount !== this.length) return [];
-  let result = Array(rowsCount).fill().map(() => []);
-  for (let row = 0; row < colsCount; row++) {
-    for (let col = 0; col < rowsCount; col++) {
-      if (row & 1) {
-        result[rowsCount - col - 1].push(this[row * rowsCount + col]);
-      } else {
-        result[col].push(this[row * rowsCount + col]);
-      }
+    // base case: wrong inputs
+    if (rowsCount * colsCount !== this.length) return [];
+    // support variables
+    const res = Array.from({length: rowsCount}, () => Array.from({length: colsCount}));
+    let goingDown = true, x = 0, y = 0;
+    // populating res
+    for (const n of this) {
+        res[y][x] = n;
+        // updating the pointers
+        if (goingDown) {
+            y++;
+            // end of the line
+            if (y === rowsCount) {
+                y--;
+                x++;
+                goingDown = false;
+            }
+        } else {
+            y--;
+            // end of the line
+            if (y < 0) {
+                y = 0;
+                x++;
+                goingDown = true;
+            }
+        }
     }
-  }
-  return result;
-}
+    return res;
+};
+
 
 /**
  * const arr = [1,2,3,4];
