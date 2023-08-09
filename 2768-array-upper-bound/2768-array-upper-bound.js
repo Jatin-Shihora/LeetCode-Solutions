@@ -8,7 +8,7 @@ Array.prototype.upperBound = function(target) {
     let result = -1; // Initialize result as -1 to handle cases where target is not found
 
     while (left <= right) {
-        const mid = Math.floor((left + right) / 2);
+        const mid = left + ((right - left) >> 1);
 
         if (this[mid] === target) {
             result = mid; // Update result to store the current index
