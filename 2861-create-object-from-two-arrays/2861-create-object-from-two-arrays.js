@@ -1,14 +1,9 @@
-/**
- * @param {Array} keysArr
- * @param {Array} valuesArr
- * @return {Object}
- */
 var createObject = function(keysArr, valuesArr) {
     const obj = {};
-    for (let i in keysArr) {
-        if (!obj.hasOwnProperty(keysArr[i])) {
-            obj[keysArr[i]] = valuesArr[i];
+    keysArr.forEach((key, index) => {
+        if (!(key in obj)) {
+            obj[key] = valuesArr[index];
         }
-    }
+    });
     return obj;
 };
