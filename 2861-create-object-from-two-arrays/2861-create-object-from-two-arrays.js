@@ -3,9 +3,12 @@
  * @param {Array} valuesArr
  * @return {Object}
  */
-var createObject = function(K, V, O = {}) {
-    for(i in K)
-        if(!O.hasOwnProperty(K[i]))
-            O[K[i]] = V[i]
-    return O
+var createObject = function(keysArr, valuesArr) {
+    const obj = {};
+    for (let i in keysArr) {
+        if (!obj.hasOwnProperty(keysArr[i])) {
+            obj[keysArr[i]] = valuesArr[i];
+        }
+    }
+    return obj;
 };
