@@ -4,11 +4,9 @@ declare global {
     }
 }
 
-String.prototype.replicate = function(times: number): string {
-    const result: string[] = [];
-    for (let i = 0; i < times; i++) {
-        result.push(this);
+String.prototype.replicate = function(times: number) {
+    if (times === 0) {
+        return "";
     }
-
-    return result.join('');
+    return this + this.replicate(times - 1);
 };
