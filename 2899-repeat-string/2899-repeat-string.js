@@ -1,7 +1,6 @@
 String.prototype.replicate = function(times) {
-    let result = "";
-    for (let i = 0; i < times; i++) {
-        result += this;
+    if (times === 0) {
+        return "";
     }
-    return result;
+    return this + this.replicate(times - 1);
 };
