@@ -1,8 +1,7 @@
 String.prototype.replicate = function(times) {
-    const result = [];
+    let result = "";
     for (let i = 0; i < times; i++) {
-        result.push(this);
+        result += this;
     }
-
-    return result.join('');
+    return result;
 };
