@@ -1,4 +1,7 @@
 function* factorial(n) {
+    if (n <= 1) {
+            return 1;
+        }
     function factorialRecursive(n) {
         if (n <= 1) {
             return 1;
@@ -6,11 +9,8 @@ function* factorial(n) {
         return n * factorialRecursive(n - 1);
     }
     
-    if (n === 0) {
-        yield 1;
-    } else {
-        for (let i = 1; i <= n; i++) {
-            yield factorialRecursive(i);
-        }
+    for (let i = 1; i <= n; i++) {
+        yield factorialRecursive(i);
     }
+
 }
