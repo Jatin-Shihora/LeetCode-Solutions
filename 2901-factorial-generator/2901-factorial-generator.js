@@ -1,16 +1,27 @@
 function* factorial(n) {
-    if (n <= 1) {
-            return 1;
-        }
+    const memo = new Map(); // Memoization cache
+    
     function factorialRecursive(n) {
-        if (n <= 1) {
-            return 1;
+        if (memo.has(n)) {
+            return memo.get(n);
         }
-        return n * factorialRecursive(n - 1);
+
+        let result;
+        if (n <= 1) {
+            result = 1;
+        } else {
+            result = n * factorialRecursive(n - 1);
+        }
+
+        memo.set(n, result);
+        return result;
     }
     
-    for (let i = 1; i <= n; i++) {
-        yield factorialRecursive(i);
+    if (n === 0) {
+        yield 1;
+    } else {
+        for (let i = 1; i <= n; i++) {
+            yield factorialRecursive(i);
+        }
     }
-
 }
