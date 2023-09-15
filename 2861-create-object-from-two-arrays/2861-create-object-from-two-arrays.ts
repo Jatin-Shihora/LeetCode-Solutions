@@ -1,10 +1,18 @@
-function createObject(keysArr: any[], valuesArr: any[]): Record<string, any> {
-    const O: Record<string, any> = {}
+function createObject(keysArr: (string | number | boolean)[], valuesArr: any[]): Record<string, any> {
+    const obj: Record<string, any> = {};
+    const addedKeys: Set<string> = new Set();
+
     keysArr.forEach((key, index) => {
-        if (!O.hasOwnProperty(key)) {
-            O[key] = valuesArr[index];
+        // Convert non-string keys to strings
+        if (typeof key !== 'string') {
+            key = String(key);
+        }
+
+        if (!addedKeys.has(key)) {
+            addedKeys.add(key);
+            obj[key] = valuesArr[index];
         }
     });
 
-    return O;
+    return obj;
 }
