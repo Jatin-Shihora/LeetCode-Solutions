@@ -1,9 +1,9 @@
 var createObject = function(keysArr, valuesArr) {
     const obj = {};
-    keysArr.forEach((key, index) => {
-        if (!(key in obj)) {
-            obj[key] = valuesArr[index];
+    for (const i in keysArr) {
+        if (!obj.hasOwnProperty(keysArr[i])) {
+            obj[keysArr[i]] = valuesArr[i];
         }
-    });
+    }
     return obj;
 };
