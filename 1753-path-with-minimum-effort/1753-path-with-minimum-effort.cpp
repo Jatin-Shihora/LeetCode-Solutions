@@ -1,5 +1,5 @@
 class Solution {
-public:
+public://DjKshitra Algorithm
     int minimumEffortPath(vector<vector<int>>& heights) {
         int n = heights.size();
         int m = heights[0].size();
