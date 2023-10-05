@@ -4,9 +4,8 @@
  * @return {boolean}
  */
 function areDeeplyEqual(o1, o2) {
-  if (o1 === o2) return true; // Check for strict equality first
-  if (o1 === null || o1 === undefined || o2 === null || o2 === undefined) return false;
-
+  if (o1 === o2) return true;
+  if (o1 === null || o2 === null) return false;
   var objs = [[o1, o2]];
 
   while (objs.length) {
