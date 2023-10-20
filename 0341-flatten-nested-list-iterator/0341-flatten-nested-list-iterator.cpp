@@ -17,6 +17,8 @@
  */
 
 class NestedIterator {
+private:
+    stack<vector<NestedInteger>::iterator> begins, ends;
 
 public:
     NestedIterator(vector<NestedInteger> &nestedList) {
@@ -44,10 +46,6 @@ public:
         }
         return false;
     }
-private:
-    stack<vector<NestedInteger>::iterator> begins, ends;
-
-
 };
 
 /**
