@@ -16,36 +16,28 @@
  * };
  */
 
+//O(n) space, Flatten the list in constructor. The nested list can be visualized as a tree and the iterator 
+// order is dfs.
 class NestedIterator {
-private:
-    stack<vector<NestedInteger>::iterator> begins, ends;
-
 public:
     NestedIterator(vector<NestedInteger> &nestedList) {
-        begins.push(nestedList.begin());
-        ends.push(nestedList.end());
+        dfs(nestedList); 
     }
-    
+    void dfs(vector<NestedInteger> &nestedList) {
+         for(int i=nestedList.size()-1;i>=0;i--)
+            if(nestedList[i].isInteger()) st.push(nestedList[i].getInteger());
+            else dfs(nestedList[i].getList());
+    }
     int next() {
-        hasNext();
-        return (begins.top()++) -> getInteger();
+        int nxt = st.top();
+        st.pop();
+        return nxt;
     }
-    
     bool hasNext() {
-        while(begins.size()){
-            if(begins.top()==ends.top()){
-                begins.pop();
-                ends.pop();
-            }else{
-                auto x = begins.top();
-                if(x->isInteger()) return true;
-                begins.top()++;
-                begins.push(x->getList().begin());
-                ends.push(x->getList().end());
-            }
-        }
-        return false;
+        return !st.empty();
     }
+private:
+    stack<int> st;
 };
 
 /**
