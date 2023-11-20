@@ -24,17 +24,18 @@ Sum up the distance for each type of garbage.
 class Solution {
 public:
     int garbageCollection(vector<string>& garbage, vector<int>& travel) {
-        int last[128] = {}, res = 0;
-        for (int i = 0; i < garbage.size(); ++i) {
-            res += garbage[i].size();
-            for (char c : garbage[i])
-                last[c] = i;
+        int gtruck = 1, ptruck = 1, mtruck = 1, ans = 0;
+        for (int i = 0; i < garbage.size(); i++) {
+            int dist = i ? travel[i - 1] : 0;
+            gtruck += dist, ptruck += dist, mtruck += dist;
+            for (auto& c : garbage[i])
+                if (c == 'P')
+                    ans += ptruck, ptruck = 1;
+                else if (c == 'G')
+                    ans += gtruck, gtruck = 1;
+                else
+                    ans += mtruck, mtruck = 1;
         }
-        for (int j = 1; j < travel.size(); ++j)
-            travel[j] += travel[j - 1];
-        for (int c : "PGM")
-            if (last[c])
-                res += travel[last[c] - 1];
-        return res;
+        return ans;
     }
 };
