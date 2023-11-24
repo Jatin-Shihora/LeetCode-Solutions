@@ -1,8 +1,6 @@
 class Solution {
     public int maxCoins(int[] piles) {
-    Arrays.sort(piles);
-
-
+        Arrays.sort(piles);
         int ans = 0;
         int n = piles.length;
 
