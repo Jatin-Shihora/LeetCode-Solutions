@@ -5,19 +5,22 @@
  * @return {Function}
  */
 var cancellable = function(fn, args, t) {
-    let isCancelled = false;
+    let timerId = null;
     fn(...args);
+
     const startInterval = () => {
-        setTimeout(() => {
-            if (isCancelled) return;
+        timerId = setTimeout(() => {
             fn(...args);
             startInterval();
         }, t);
-    }
+    };
     startInterval();
+
     const cancelInterval = () => {
-        isCancelled = true;
-    }
+        if (timerId !== null) { // not totally needed as clearTimeout is very forgiving fn
+            clearTimeout(timerId);
+        }
+    };
 
     return cancelInterval;
 };
