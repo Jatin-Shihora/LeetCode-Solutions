@@ -5,7 +5,7 @@
  * @yields {string}
  */
  
-var dateRangeGenerator = function dateRangeGenerator(start, end, step) {
+var dateRangeGenerator = function (start, end, step) {
     const startDate = new Date(start);
     const endDate = new Date(end);
     const datesList = [];
