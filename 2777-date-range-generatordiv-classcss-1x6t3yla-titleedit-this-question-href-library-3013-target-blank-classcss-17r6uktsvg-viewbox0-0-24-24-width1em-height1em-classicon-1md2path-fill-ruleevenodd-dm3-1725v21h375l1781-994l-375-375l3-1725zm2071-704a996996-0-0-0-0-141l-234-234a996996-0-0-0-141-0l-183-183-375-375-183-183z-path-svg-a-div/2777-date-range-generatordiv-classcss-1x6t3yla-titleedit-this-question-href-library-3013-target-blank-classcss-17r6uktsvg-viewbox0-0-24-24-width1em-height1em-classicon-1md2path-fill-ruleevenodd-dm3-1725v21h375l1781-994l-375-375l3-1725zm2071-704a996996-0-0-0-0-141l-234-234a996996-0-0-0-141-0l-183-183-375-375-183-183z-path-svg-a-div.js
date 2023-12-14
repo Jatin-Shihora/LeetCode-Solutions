@@ -4,7 +4,6 @@
  * @param {number} step
  * @yields {string}
  */
- 
 var dateRangeGenerator = function (start, end, step) {
     const startDate = new Date(start);
     const endDate = new Date(end);
@@ -25,7 +24,6 @@ function formatDate(date) {
     const day = String(date.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
 }
-
 
 /**
  * const g = dateRangeGenerator('2023-04-01', '2023-04-04', 1);
