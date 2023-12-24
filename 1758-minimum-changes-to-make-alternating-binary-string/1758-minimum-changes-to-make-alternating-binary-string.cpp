@@ -9,6 +9,6 @@ public:
             }
         }
 
-        return min(start0, static_cast<int>(s.size()) - start0);
+        return min(start0, (int) s.size() - start0);
     }
 };
