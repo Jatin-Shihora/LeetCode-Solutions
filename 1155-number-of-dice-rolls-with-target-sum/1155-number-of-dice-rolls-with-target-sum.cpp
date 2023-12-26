@@ -1,15 +1,17 @@
 class Solution {
 public:
-int numRollsToTarget(int d, int f, int target) {
-  vector<int> dp(target + 1);
-  dp[0] = 1;
-  for (int i = 1; i <= d; ++i) {
-    vector<int> dp1(target + 1);
-    for (int j = 1; j <= f; ++j)
-      for (auto k = j; k <= target; ++k)
-        dp1[k] = (dp1[k] + dp[k - j]) % 1000000007;
-    swap(dp, dp1);
-  }
-  return dp[target];
-}
+    int numRollsToTarget(int n, int k, int target) {
+        vector<vector<int>> mem(n + 1, vector<int>(target + 1, -1));
+        return numRollsToTarget(n, k, target, mem);
+    }
+
+    int numRollsToTarget(int n, int k, int target, vector<vector<int>>& mem) {
+        if (n == 0 || target < 0) return target == 0 ? 1 : 0;
+        if (mem[n][target] != -1) return mem[n][target];
+        int ways = 0;
+        for (int i = 1; i <= k; i++) {
+            ways = (ways + numRollsToTarget(n - 1, k, target - i, mem)) % 1000000007;
+        }
+        return mem[n][target] = ways;
+    }
 };
