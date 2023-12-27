@@ -1,16 +1,18 @@
+// So, the realization was - if we have repeated characters, we need to remove all of them except one - the "most expensive" character to remove.
+
 class Solution {
 public:
     int minCost(string s, vector<int>& cost) {
-        int res = 0, max_cost = 0, sum_cost = 0, n = s.size();
-        for (int i = 0; i < n; ++i) {
-            if (i > 0 && s[i] != s[i - 1]) {
-                res += sum_cost - max_cost;
-                sum_cost = max_cost = 0;
+        int res = cost[0], max_cost = cost[0];
+        
+        for(int i=1; i<s.size();++i){
+            if(s[i] != s[i-1]){
+                res -= max_cost;
+                max_cost = 0;
             }
-            sum_cost += cost[i];
+            res += cost[i];
             max_cost = max(max_cost, cost[i]);
         }
-        res += sum_cost - max_cost;
-        return res;
+        return res - max_cost;
     }
 };
