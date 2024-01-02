@@ -1,3 +1,4 @@
+//repeated integer, new row
 class Solution {
 public:
     vector<vector<int>> findMatrix(vector<int>& nums) {
