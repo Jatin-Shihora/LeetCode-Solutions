@@ -1,8 +1,7 @@
-function* cycleGenerator(arr: number[], startIndex: number): Generator<number, void, unknown> {
-  let index = startIndex;
+function* cycleGenerator(arr: number[], startIndex: number): Generator<number, void, number> {
   while (true) {
-    const jump = yield arr[index];
-    index = (index + arr.length + (jump as number) % arr.length) % arr.length;
+    const jump = yield arr.at(startIndex % arr.length);
+    startIndex += jump as number;
   }
 }
 
