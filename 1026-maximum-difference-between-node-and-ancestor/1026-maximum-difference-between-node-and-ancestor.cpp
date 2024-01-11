@@ -12,6 +12,11 @@
 class Solution {
 public:
     int maxAncestorDiff(TreeNode* root, int mini = INT_MAX, int maxi = INT_MIN) {
-        return root ? max(maxAncestorDiff(root->left, mini = min(mini, root->val), maxi = max(maxi, root->val)), maxAncestorDiff(root->right, mini, maxi)) : maxi - mini;
+        // base case i.e., leaves, return the max-min along the path
+        if (!root) return (maxi - mini);
+        // update mini and maxi
+        mini = min(mini, root->val), maxi = max(maxi, root->val);
+        // finding the maximum distance we would like to find by going left and right
+        return max(maxAncestorDiff(root->left, mini, maxi), maxAncestorDiff(root->right, mini, maxi));
     }
 };
