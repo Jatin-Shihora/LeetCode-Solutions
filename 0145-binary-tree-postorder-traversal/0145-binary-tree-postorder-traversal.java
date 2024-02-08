@@ -15,24 +15,25 @@
  */
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> output = new ArrayList<Integer>();
-        if (root == null)
-            return output;
-        Stack<TreeNode> stack = new Stack<>();
-        Stack<TreeNode> reverseStack = new Stack<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode current = stack.pop();
-            reverseStack.push(current);
-            if (current.left != null)
-                stack.push(current.left);
-            if (current.right != null)
-                stack.push(current.right);
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode cur = root, lastVisited = null;
+        
+        while (!stack.isEmpty() || cur != null) {
+            if (cur != null) {
+                stack.addLast(cur);
+                cur = cur.left;
+            } else {
+                TreeNode peek = stack.peekLast();
+                if (peek.right != null && peek.right != lastVisited) {
+                    cur = peek.right;
+                } else {
+                    res.add(peek.val);
+                    lastVisited = stack.removeLast();
+                }
+            }
         }
-        while (!reverseStack.isEmpty()) {
-            TreeNode current = reverseStack.pop();
-            output.add(current.val);
-        }
-        return output;
+        
+        return res;
     }
 }
