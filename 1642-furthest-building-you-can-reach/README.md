@@ -12,7 +12,7 @@
 <p><em>Return the furthest building index (0-indexed) you can reach if you use the given ladders and bricks optimally.</em></p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
+<p><strong class="example">Example 1:</strong></p>
 <img alt="" src="https://assets.leetcode.com/uploads/2020/10/27/q4.gif" style="width: 562px; height: 561px;">
 <pre><strong>Input:</strong> heights = [4,2,7,6,9,14,12], bricks = 5, ladders = 1
 <strong>Output:</strong> 4
@@ -24,13 +24,13 @@
 It is impossible to go beyond building 4 because you do not have any more bricks or ladders.
 </pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
 <pre><strong>Input:</strong> heights = [4,12,2,7,3,18,20,3,19], bricks = 10, ladders = 2
 <strong>Output:</strong> 7
 </pre>
 
-<p><strong>Example 3:</strong></p>
+<p><strong class="example">Example 3:</strong></p>
 
 <pre><strong>Input:</strong> heights = [14,3,19,3], bricks = 17, ladders = 0
 <strong>Output:</strong> 3
