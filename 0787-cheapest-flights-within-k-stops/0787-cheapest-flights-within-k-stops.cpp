@@ -1,38 +1,30 @@
 class Solution {
 public:
     int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int k) {
-        vector<pair<int,int>> adj[n];
-        //forming our adjacency list or graph !
-        for(auto it : flights){
-            adj[it[0]].push_back({it[1],it[2]});
+        vector<vector<pair<int, int>>> adj(n);
+        for (auto& e : flights) {
+            adj[e[0]].push_back({e[1], e[2]});
         }
-        //{stops,{node,dist}}
-        queue<pair<int,pair<int,int>>> q;
-        vector<int> dist(n,1e9);
-        q.push({0,{src,0}});
-        dist[src]=0;
-        while(!q.empty()){
-            auto it = q.front();
-            int stops =it.first;
-            int node= it.second.first;
-            int cost= it.second.second;
-            q.pop();
-            //if already crossed our maximum 'k' stops criteria
-            if(stops>k) continue;
-            for(auto x: adj[node]){
-                int adjNode= x.first;
-                int edjW = x.second;
-                //checking the condition if current path gives min
-                // distance for a particular node
-                if(cost+edjW< dist[adjNode] and stops<=k){
-                    dist[adjNode]= cost +edjW;
-                    //increase the stops while adding a new entry
-                    q.push({stops+1,{adjNode,cost +edjW}});
+        vector<int> dist(n, numeric_limits<int>::max());
+        queue<pair<int, int>> q;
+        q.push({src, 0});
+        int stops = 0;
+
+        while (stops <= k && !q.empty()) {
+            int sz = q.size();
+            // Iterate on current level.
+            while (sz--) {
+                auto [node, distance] = q.front();
+                q.pop();
+                // Iterate over neighbors of popped node.
+                for (auto& [neighbour, price] : adj[node]) {
+                    if (price + distance >= dist[neighbour]) continue;
+                    dist[neighbour] = price + distance;
+                    q.push({neighbour, dist[neighbour]});
                 }
             }
+            stops++;
         }
-        //answer return
-        if(dist[dst]== 1e9) return -1;
-        else return dist[dst];
+        return dist[dst] == numeric_limits<int>::max() ? -1 : dist[dst];
     }
 };
