@@ -17,7 +17,7 @@ public:
             }
 
             // Check for pivot condition
-            if (sumLeft == sumRight && n !=leftPointer && leftPointer + 1 == rightPointer - 1) {
+            if (sumLeft == sumRight && leftPointer + 1 == rightPointer - 1) {
                 return leftPointer + 1;
             }
         }
