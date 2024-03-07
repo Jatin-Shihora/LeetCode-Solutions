@@ -21,4 +21,5 @@ public class Solution {
         // Check if the square of the left pointer minus the total sum is zero
         return left * left - totalSum == 0 ? left : -1;
     }
+
 }
