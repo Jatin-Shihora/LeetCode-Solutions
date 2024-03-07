@@ -1,25 +1,28 @@
 public class Solution {
     public int pivotInteger(int n) {
-        // Initialize left and right pointers for binary search
-        int left = 1, right = n;
-        
-        // Calculate the total sum of the sequence
-        int totalSum = n * (n + 1) / 2;
+        // Array to store precomputed pivot values
+        int[] precompute = new int[1001];
 
-        // Binary search for the pivot point
-        while (left < right) {
-            // Calculate the mid-point
-            int mid = (left + right) / 2;
-
-            // Check if the difference between the square of mid and the total sum is negative
-            if (mid * mid - totalSum < 0)
-                left = mid + 1; // Adjust the left bound if the sum is smaller
-            else
-                right = mid; // Adjust the right bound if the sum is equal or greater
+        // Initializing to 0
+        for (int i = 0; i < precompute.length; i++) {
+            precompute[i] = 0;
         }
 
-        // Check if the square of the left pointer minus the total sum is zero
-        return left * left - totalSum == 0 ? left : -1;
-    }
+        // Check if precompute array is not initialized
+        if (precompute[1] == 0) {
+            for (int i = 1, j = 1; i <= 1000; ++i) {
+                int sum = i * (i + 1) / 2;
 
+                // Find the first square greater than or equal to sum
+                while (j * j < sum) {
+                    ++j;
+                }
+
+                // Check if j * j is equal to sum (pivot found), otherwise set to -1
+                precompute[i] = j * j == sum ? j : -1;
+            }
+        }
+
+        return precompute[n];
+    }
 }
