@@ -1,27 +1,24 @@
 public class Solution {
     public int pivotInteger(int n) {
-        int leftPointer = 1;
-        int rightPointer = n;
-        int sumLeft = leftPointer;
-        int sumRight = rightPointer;
+        // Initialize left and right pointers for binary search
+        int left = 1, right = n;
+        
+        // Calculate the total sum of the sequence
+        int totalSum = n * (n + 1) / 2;
 
-        if (n == leftPointer) return n;
+        // Binary search for the pivot point
+        while (left < right) {
+            // Calculate the mid-point
+            int mid = (left + right) / 2;
 
-        // Iterate until the pointers meet
-        while (leftPointer < rightPointer) {
-            // Adjust sums and pointers based on comparison
-            if (sumLeft < sumRight) {
-                sumLeft += ++leftPointer;
-            } else {
-                sumRight += --rightPointer;
-            }
-
-            // Check for pivot condition
-            if (sumLeft == sumRight && leftPointer + 1 == rightPointer - 1) {
-                return leftPointer + 1;
-            }
+            // Check if the difference between the square of mid and the total sum is negative
+            if (mid * mid - totalSum < 0)
+                left = mid + 1; // Adjust the left bound if the sum is smaller
+            else
+                right = mid; // Adjust the right bound if the sum is equal or greater
         }
 
-        return -1; // Return -1 if no pivot is found
+        // Check if the square of the left pointer minus the total sum is zero
+        return left * left - totalSum == 0 ? left : -1;
     }
 }
