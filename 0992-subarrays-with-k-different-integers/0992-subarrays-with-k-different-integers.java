@@ -1,30 +1,38 @@
 class Solution {
     public int subarraysWithKDistinct(int[] nums, int k) {
-        return slidingWindowAtMost(nums, k) - slidingWindowAtMost(nums, k - 1);
-    }
+        // Array to store the count of distinct values encountered
+        int[] distinctCount = new int[nums.length + 1];
 
-    // Helper function to count the number of subarrays with at most k distinct elements.
-    private int slidingWindowAtMost(int[] nums, int distinctK) {
-        // To store the occurrences of each element.
-        Map<Integer, Integer> freqMap = new HashMap<>();
-        int left = 0, totalCount = 0;
+        int totalCount = 0;
+        int left = 0;
+        int right = 0;
+        int currCount = 0;
 
-        // Right pointer of the sliding window iterates through the array.
-        for (int right = 0; right < nums.length; right++) {
-            freqMap.put(nums[right], freqMap.getOrDefault(nums[right], 0) + 1);
-
-            // If the number of distinct elements in the window exceeds k,
-            // we shrink the window from the left until we have at most k distinct elements.
-            while (freqMap.size() > distinctK) {
-                freqMap.put(nums[left], freqMap.get(nums[left]) - 1);
-                if (freqMap.get(nums[left]) == 0) {
-                    freqMap.remove(nums[left]);
-                }
-                left++;
+        while (right < nums.length) {
+            // Increment the count of the current element in the window
+            if (distinctCount[nums[right++]]++ == 0) {
+                // If encountering a new distinct element, decrement K
+                k--;
             }
 
-            // Update the total count by adding the length of the current subarray.
-            totalCount += (right - left + 1);
+            // If K becomes negative, adjust the window from the left
+            if (k < 0) {
+                // Move the left pointer until the count of distinct elements becomes valid again
+                --distinctCount[nums[left++]];
+                k++;
+                currCount = 0;
+            }
+
+            // If K becomes zero, calculate subarrays
+            if (k == 0) {
+                // While the count of left remains greater than 1, keep shrinking the window from the left
+                while (distinctCount[nums[left]] > 1) {
+                    --distinctCount[nums[left++]];
+                    currCount++;
+                }
+                // Add the count of subarrays with K distinct elements to the total count
+                totalCount += (currCount + 1);
+            }
         }
         return totalCount;
     }
