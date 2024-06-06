@@ -1,38 +1,37 @@
 class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
-        if (hand.size() % groupSize != 0) {
-            return false;
-        }
-
         // Map to store the count of each card value
-        unordered_map<int, int> cardCount;
+        map<int, int> cardCount;
         for (int card : hand) {
             cardCount[card]++;
         }
-        
-        for (int card : hand) {
-            int startCard = card;
-            // Find the start of the potential straight sequence
-            while (cardCount[startCard - 1]) {
-                startCard--;
+
+        // Queue to keep track of the number of new groups starting with each card value
+        queue<int> groupStartQueue;
+        int lastCard = -1, currentOpenGroups = 0;
+
+        for (auto& entry : cardCount) {
+            int currentCard = entry.first;
+
+            // Check if there are any discrepancies in the sequence or more groups are required than available cards
+            if ((currentOpenGroups > 0 && currentCard > lastCard + 1) || currentOpenGroups > cardCount[currentCard]) {
+                return false;
             }
-            
-            // Process the sequence starting from startCard
-            while (startCard <= card) {
-                while (cardCount[startCard]) {
-                    // Check if we can form a consecutive sequence of groupSize cards
-                    for (int nextCard = startCard; nextCard < startCard + groupSize; nextCard++) {
-                        if (!cardCount[nextCard]) {
-                            return false;
-                        }
-                        cardCount[nextCard]--;
-                    }
-                }
-                startCard++;
+
+            // Calculate the number of new groups starting with the current card
+            groupStartQueue.push(cardCount[currentCard] - currentOpenGroups);
+            lastCard = currentCard;
+            currentOpenGroups = cardCount[currentCard];
+
+            // Maintain the queue size to be equal to groupSize
+            if (groupStartQueue.size() == groupSize) {
+                currentOpenGroups -= groupStartQueue.front();
+                groupStartQueue.pop();
             }
         }
-        
-        return true;
+
+        // All groups should be completed by the end
+        return currentOpenGroups == 0;
     }
 };
