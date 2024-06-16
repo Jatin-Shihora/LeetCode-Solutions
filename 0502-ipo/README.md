@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/ipo/">502. IPO</a></h2><h3>Hard</h3><hr><div><p>Suppose LeetCode will start its <strong>IPO</strong> soon. In order to sell a good price of its shares to Venture Capital, LeetCode would like to work on some projects to increase its capital before the <strong>IPO</strong>. Since it has limited resources, it can only finish at most <code>k</code> distinct projects before the <strong>IPO</strong>. Help LeetCode design the best way to maximize its total capital after finishing at most <code>k</code> distinct projects.</p>
+<h2><a href="https://leetcode.com/problems/ipo">502. IPO</a></h2><h3>Hard</h3><hr><p>Suppose LeetCode will start its <strong>IPO</strong> soon. In order to sell a good price of its shares to Venture Capital, LeetCode would like to work on some projects to increase its capital before the <strong>IPO</strong>. Since it has limited resources, it can only finish at most <code>k</code> distinct projects before the <strong>IPO</strong>. Help LeetCode design the best way to maximize its total capital after finishing at most <code>k</code> distinct projects.</p>
 
 <p>You are given <code>n</code> projects where the <code>i<sup>th</sup></code> project has a pure profit <code>profits[i]</code> and a minimum capital of <code>capital[i]</code> is needed to start it.</p>
 
@@ -11,7 +11,8 @@
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
-<pre><strong>Input:</strong> k = 2, w = 0, profits = [1,2,3], capital = [0,1,1]
+<pre>
+<strong>Input:</strong> k = 2, w = 0, profits = [1,2,3], capital = [0,1,1]
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> Since your initial capital is 0, you can only start the project indexed 0.
 After finishing it you will obtain profit 1 and your capital becomes 1.
@@ -22,7 +23,8 @@ Therefore, output the final maximized capital, which is 0 + 1 + 3 = 4.
 
 <p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> k = 3, w = 0, profits = [1,2,3], capital = [0,1,2]
+<pre>
+<strong>Input:</strong> k = 3, w = 0, profits = [1,2,3], capital = [0,1,2]
 <strong>Output:</strong> 6
 </pre>
 
@@ -38,4 +40,3 @@ Therefore, output the final maximized capital, which is 0 + 1 + 3 = 4.
 	<li><code>0 &lt;= profits[i] &lt;= 10<sup>4</sup></code></li>
 	<li><code>0 &lt;= capital[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
-</div>
