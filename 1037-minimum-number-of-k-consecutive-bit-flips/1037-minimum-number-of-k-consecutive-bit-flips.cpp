@@ -1,22 +1,31 @@
- 
 class Solution {
 public:
-    int minKBitFlips(std::vector<int>& A, int K) {
-        int ans = 0;
-        int size = A.size();
-        std::queue<int> record;
-        
-        for(int i = 0; i < size; i++) {
-            int pivot = record.size() % 2 == 0 ? A[i] : 1 - A[i];
-            
-            if(pivot == 0) {
-                ans++;
-                record.push(i + K - 1);
+    int minKBitFlips(vector<int>& nums, int k) {
+        vector<bool> flipped(nums.size(), false); // Keeps track of flipped states
+        int validFlipsFromPastWindow = 0; // Tracks valid flips within the past window
+        int flipCount = 0; // Counts total flips needed
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (i >= k) {
+                // Decrease count of valid flips from the past window if needed
+                if (flipped[i - k]) {
+                    validFlipsFromPastWindow--;
+                }
             }
-            
-            if(!record.empty() && i == record.front()) record.pop();
+
+            // Check if current bit needs to be flipped
+            if (validFlipsFromPastWindow % 2 == nums[i]) {
+                // If flipping the window extends beyond the array length, return -1
+                if (i + k > nums.size()) {
+                    return -1;
+                }
+                // Increment the count of valid flips and mark current as flipped
+                validFlipsFromPastWindow++;
+                flipped[i] = true;
+                flipCount++;
+            }
         }
-        
-        return record.empty() ? ans : -1;
+
+        return flipCount;
     }
 };
