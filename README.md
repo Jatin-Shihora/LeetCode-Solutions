@@ -29,3 +29,15 @@ SOFTWARE.
 
 ```
 Basically it means you can do whatever you want with this repo ;)
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [1803-average-waiting-time](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1803-average-waiting-time) |
+## Simulation
+|  |
+| ------- |
+| [1803-average-waiting-time](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1803-average-waiting-time) |
+<!---LeetCode Topics End-->
