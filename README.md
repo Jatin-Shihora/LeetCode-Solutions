@@ -39,6 +39,7 @@ Basically it means you can do whatever you want with this repo ;)
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1803-average-waiting-time](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1803-average-waiting-time) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
+| [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Simulation
 |  |
 | ------- |
@@ -72,6 +73,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
+| [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Depth-First Search
 |  |
 | ------- |
@@ -82,8 +84,10 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
+| [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Hash Table
 |  |
 | ------- |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
+| [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
 <!---LeetCode Topics End-->
