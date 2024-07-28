@@ -49,6 +49,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## String
 |  |
 | ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 | [1298-reverse-substrings-between-each-pair-of-parentheses](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1298-reverse-substrings-between-each-pair-of-parentheses) |
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1756-minimum-deletions-to-make-string-balanced) |
@@ -104,6 +105,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Dynamic Programming
 |  |
 | ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1756-minimum-deletions-to-make-string-balanced) |
 ## Graph
@@ -114,4 +116,20 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+## Binary Search
+|  |
+| ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
+## Rolling Hash
+|  |
+| ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
+## Suffix Array
+|  |
+| ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
+## Hash Function
+|  |
+| ------- |
+| [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 <!---LeetCode Topics End-->
