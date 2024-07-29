@@ -55,6 +55,7 @@ Basically it means you can do whatever you want with this repo ;)
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1756-minimum-deletions-to-make-string-balanced) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
+| [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Stack
 |  |
 | ------- |
@@ -99,10 +100,12 @@ Basically it means you can do whatever you want with this repo ;)
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
+| [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Sorting
 |  |
 | ------- |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
+| [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -137,4 +140,12 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
+## Greedy
+|  |
+| ------- |
+| [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
+## Counting
+|  |
+| ------- |
+| [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 <!---LeetCode Topics End-->
