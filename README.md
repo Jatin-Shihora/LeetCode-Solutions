@@ -97,6 +97,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Hash Table
 |  |
 | ------- |
+| [0138-copy-list-with-random-pointer](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
@@ -148,4 +149,8 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
+## Linked List
+|  |
+| ------- |
+| [0138-copy-list-with-random-pointer](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 <!---LeetCode Topics End-->
