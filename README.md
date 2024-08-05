@@ -50,6 +50,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## String
 |  |
 | ------- |
+| [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
 | [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 | [1298-reverse-substrings-between-each-pair-of-parentheses](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1298-reverse-substrings-between-each-pair-of-parentheses) |
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
@@ -65,10 +66,12 @@ Basically it means you can do whatever you want with this repo ;)
 ## Math
 |  |
 | ------- |
+| [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 ## Recursion
 |  |
 | ------- |
+| [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 ## Queue
 |  |
