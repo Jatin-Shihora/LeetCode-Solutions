@@ -35,6 +35,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Array
 |  |
 | ------- |
+| [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
@@ -108,6 +109,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Sorting
 |  |
 | ------- |
+| [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Dynamic Programming
@@ -127,6 +129,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Binary Search
 |  |
 | ------- |
+| [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 ## Rolling Hash
 |  |
@@ -156,4 +159,8 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [0138-copy-list-with-random-pointer](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
+## Two Pointers
+|  |
+| ------- |
+| [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 <!---LeetCode Topics End-->
