@@ -67,6 +67,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Math
 |  |
 | ------- |
+| [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 ## Recursion
@@ -102,6 +103,7 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [0138-copy-list-with-random-pointer](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
+| [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
@@ -115,6 +117,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Dynamic Programming
 |  |
 | ------- |
+| [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1756-minimum-deletions-to-make-string-balanced) |
@@ -163,4 +166,8 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 <!---LeetCode Topics End-->
