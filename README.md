@@ -73,6 +73,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Recursion
 |  |
 | ------- |
+| [0025-reverse-nodes-in-k-group](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0025-reverse-nodes-in-k-group) |
 | [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 ## Queue
@@ -161,6 +162,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Linked List
 |  |
 | ------- |
+| [0025-reverse-nodes-in-k-group](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0025-reverse-nodes-in-k-group) |
 | [0138-copy-list-with-random-pointer](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0138-copy-list-with-random-pointer) |
 ## Two Pointers
 |  |
