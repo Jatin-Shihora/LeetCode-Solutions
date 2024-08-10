@@ -43,6 +43,7 @@ Basically it means you can do whatever you want with this repo ;)
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2306-create-binary-tree-from-descriptions) |
+| [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
 ## Simulation
 |  |
 | ------- |
@@ -114,6 +115,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
+| [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Dynamic Programming
 |  |
@@ -154,6 +156,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Greedy
 |  |
 | ------- |
+| [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Counting
 |  |
@@ -172,4 +175,5 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
+| [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
 <!---LeetCode Topics End-->
