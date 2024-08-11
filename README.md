@@ -37,6 +37,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
+| [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1803-average-waiting-time](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1803-average-waiting-time) |
@@ -93,6 +94,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1653-number-of-good-leaf-nodes-pairs](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1653-number-of-good-leaf-nodes-pairs) |
+| [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 ## Binary Tree
 |  |
@@ -176,4 +178,16 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
+## Breadth-First Search
+|  |
+| ------- |
+| [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+## Matrix
+|  |
+| ------- |
+| [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+## Strongly Connected Component
+|  |
+| ------- |
+| [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
 <!---LeetCode Topics End-->
