@@ -7,7 +7,7 @@ class Solution:
         max_element = nums[-1]
 
         # Maximum possible distance
-        max_possible_distance = max_element * 2
+        max_possible_distance = nums[-1] + 1
 
         # Initialize arrays for prefix counts and value counts
         prefix_count = [0] * max_possible_distance
