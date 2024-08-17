@@ -37,6 +37,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
+| [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
 | [1720-crawler-log-folder](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1741-sort-array-by-increasing-frequency) |
@@ -72,6 +73,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0273-integer-to-english-words) |
+| [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
 | [1951-find-the-winner-of-the-circular-game](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1951-find-the-winner-of-the-circular-game) |
 ## Recursion
 |  |
@@ -128,6 +130,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
+| [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1756-minimum-deletions-to-make-string-balanced) |
 ## Graph
@@ -194,4 +197,12 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+## Prefix Sum
+|  |
+| ------- |
+| [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
+## Game Theory
+|  |
+| ------- |
+| [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
 <!---LeetCode Topics End-->
