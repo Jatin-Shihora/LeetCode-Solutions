@@ -137,10 +137,12 @@ Basically it means you can do whatever you want with this repo ;)
 |  |
 | ------- |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+| [2803-modify-graph-edge-weights](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2803-modify-graph-edge-weights) |
 ## Shortest Path
 |  |
 | ------- |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+| [2803-modify-graph-edge-weights](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2803-modify-graph-edge-weights) |
 ## Binary Search
 |  |
 | ------- |
@@ -185,6 +187,7 @@ Basically it means you can do whatever you want with this repo ;)
 | ------- |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [2681-put-marbles-in-bags](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2681-put-marbles-in-bags) |
+| [2803-modify-graph-edge-weights](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/2803-modify-graph-edge-weights) |
 ## Breadth-First Search
 |  |
 | ------- |
