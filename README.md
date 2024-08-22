@@ -35,6 +35,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Array
 |  |
 | ------- |
+| [0152-maximum-product-subarray](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [1207-delete-nodes-and-return-forest](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1207-delete-nodes-and-return-forest) |
 | [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
@@ -128,6 +129,7 @@ Basically it means you can do whatever you want with this repo ;)
 ## Dynamic Programming
 |  |
 | ------- |
+| [0152-maximum-product-subarray](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0152-maximum-product-subarray) |
 | [0264-ugly-number-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/0264-ugly-number-ii) |
 | [1060-longest-repeating-substring](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1060-longest-repeating-substring) |
 | [1240-stone-game-ii](https://github.com/Jatin-Shihora/LeetCode-Solutions/tree/master/1240-stone-game-ii) |
